@@ -1,5 +1,5 @@
 @font-face {
-    font-family: "Instrument Serif";
+    font-family: "Instrument Regular";
     src: url("/fonts/InstrumentSerif-Regular.ttf") format("truetype");
     font-weight: 400;
     font-style: normal;
@@ -7,7 +7,7 @@
 }
 
 @font-face {
-    font-family: "Instrument Serif Italic";
+    font-family: "Instrument Italic";
     src: url("/fonts/InstrumentSerif-Italic.ttf") format("truetype");
 }
 
@@ -117,7 +117,7 @@ a { color: inherit; }
 .home-nav a {
     text-decoration: underline;
     text-underline-offset: 6px;
-    font-family: "Instrument Serif", ui-serif, Georgia, serif;
+    font-family: "Instrument Regular", ui-serif, Georgia, serif;
     font-size: 40px;
     display: block;
     width: 100%;
@@ -170,7 +170,7 @@ a { color: inherit; }
 .marquee__text {
     display: inline-block;
     padding: 0 1rem;
-    font-family: "Instrument Serif", ui-serif, Georgia, serif;
+    font-family: "Instrument Regular", ui-serif, Georgia, serif;
     font-size: clamp(1.5rem, 2rem + 2vw, 3rem);
     color: var(--black);
     white-space: nowrap;
@@ -301,21 +301,21 @@ a { color: inherit; }
 
 .top-nav a {
     text-decoration: none;
-    font-family: "Instrument Serif", ui-serif, Georgia, serif;
+    font-family: "Instrument Regular", ui-serif, Georgia, serif;
     font-size: clamp(1.25rem, 1rem + 1.2vw, 2rem);
     color: var(--black);
     transition: 0.3s ease-in-out;
 }
 
 .top-nav a:hover {
-    font-family: "Instrument Serif Italic", ui-serif, Georgia, serif;
+    font-family: "Instrument Italic", ui-serif, Georgia, serif;
     color: var(--blue);
     text-decoration: underline;
     transition: 0.3s ease-in-out,
 }
 
 .top-nav a.current {
-    font-family: "Instrument Serif Italic", ui-serif, Georgia, serif;
+    font-family: "Instrument Italic", ui-serif, Georgia, serif;
     color: var(--blue);
 }
 
@@ -356,7 +356,7 @@ a { color: inherit; }
 }
 
 .about-title {
-    font-family: "Instrument Serif", ui-serif, Georgia, serif;
+    font-family: "Instrument Regular", ui-serif, Georgia, serif;
     font-size: clamp(2rem, 2rem + 2vw, 3rem);
     color: var(--black);
 }
@@ -367,7 +367,7 @@ a { color: inherit; }
 }
 
 .about-heading {
-    font-family: "Instrument Serif", ui-serif, Georgia, serif;
+    font-family: "Instrument Regular", ui-serif, Georgia, serif;
     font-size: clamp(1.5rem, 1.25rem + 1vw, 2rem);
     color: var(--black);
 }
@@ -385,13 +385,13 @@ a { color: inherit; }
     letter-spacing: 2px;
     font-weight: 900;
     transition: 0.5s ease;
-    font-family: "Instrument Serif", ui-serif, Georgia, serif;
+    font-family: "Instrument Regular", ui-serif, Georgia, serif;
     text-decoration: none;
 }
 
 .about-content a:hover {
     letter-spacing: 3px;
-    font-family: "Instrument Serif Italic", ui-serif, Georgia, serif;
+    font-family: "Instrument Italic", ui-serif, Georgia, serif;
     text-decoration: underline;
 }
 
@@ -496,7 +496,7 @@ a { color: inherit; }
 }
 
 .work-heading {
-    font-family: "Instrument Serif", ui-serif, Georgia, serif;
+    font-family: "Instrument Regular", ui-serif, Georgia, serif;
     font-size: clamp(1.5rem, 1.25rem + 1vw, 2rem);
     color: var(--black);
     margin: 0 0 0.5rem 0;
@@ -527,7 +527,7 @@ a { color: inherit; }
 }
 
 .work-link {
-    font-family: "Instrument Serif", ui-serif, Georgia, serif;
+    font-family: "Instrument Regular", ui-serif, Georgia, serif;
     font-size: clamp(1rem, 0.9rem + 0.5vw, 1.125rem);
     color: var(--white);
     background-color: var(--blue);
@@ -707,7 +707,7 @@ a { color: inherit; }
 }
 
 .notes-title {
-    font-family: "Instrument Serif", ui-serif, Georgia, serif;
+    font-family: "Instrument Regular", ui-serif, Georgia, serif;
     font-size: clamp(1.25rem, 1rem + 1vw, 1.5rem);
     font-weight: 400;
     text-decoration: underline;
@@ -728,7 +728,7 @@ a { color: inherit; }
     justify-content: space-between;
     align-items: center;
     color: var(--black);
-    font-family: "Instrument Serif", ui-serif, Georgia, serif;
+    font-family: "Instrument Regular", ui-serif, Georgia, serif;
     font-size: clamp(1.25rem, 1rem + 1vw, 1.5rem);
     font-weight: 400;
     text-align: left;
@@ -974,7 +974,7 @@ a { color: inherit; }
 }
 
 .project-title {
-    font-family: "Instrument Serif", ui-serif, Georgia, serif;
+    font-family: "Instrument Regular", ui-serif, Georgia, serif;
     font-size: clamp(2rem, 2rem + 2vw, 3rem);
     color: var(--black);
     margin-bottom: 1rem;
@@ -989,7 +989,7 @@ a { color: inherit; }
 }
 
 .project-meta .work-link {
-    font-family: "Instrument Serif", ui-serif, Georgia, serif;
+    font-family: "Instrument Regular", ui-serif, Georgia, serif;
     font-size: clamp(1rem, 0.9rem + 0.5vw, 1.125rem);
     color: var(--white);
     background-color: var(--blue);
@@ -1015,7 +1015,7 @@ a { color: inherit; }
 }
 
 .project-heading {
-    font-family: "Instrument Serif", ui-serif, Georgia, serif;
+    font-family: "Instrument Regular", ui-serif, Georgia, serif;
     font-size: clamp(1.5rem, 1.25rem + 1vw, 2rem);
     color: var(--black);
     margin-bottom: 1rem;
@@ -1108,13 +1108,13 @@ a { color: inherit; }
     letter-spacing: 1px;
     font-weight: 600;
     transition: 0.5s ease;
-    font-family: "Instrument Serif", ui-serif, Georgia, serif;
+    font-family: "Instrument Regular", ui-serif, Georgia, serif;
     text-decoration: none;
 }
 
 .project-content a:hover {
     letter-spacing: 2px;
-    font-family: "Instrument Serif Italic", ui-serif, Georgia, serif;
+    font-family: "Instrument Italic", ui-serif, Georgia, serif;
     text-decoration: underline;
 }
 
