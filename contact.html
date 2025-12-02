@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ariel Molina — Contact</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script defer src="scripts.js?v=2"></script>
+    <link rel="icon" href="assets/favicon.png" type="favicon/img">
+</head>
+<body>
+    <div class="custom-cursor"></div>
+    <nav class="top-nav contact-nav" aria-label="Main Navigation">
+        <ul>
+            <li><a href="index.html">home</a></li>
+            <li> | </li>
+            <li><a href="about.html">about</a></li>
+            <li> | </li>
+            <li><a href="works.html">works</a></li>
+            <li> | </li>
+            <li><a class="current" href="contact.html">contact</a></li>
+        </ul>
+    </nav>
+    <main class="contact-page" role="main">
+        <section class="contact-notes" aria-label="Contact Notes">
+            <div class="contact-icons">
+                <a href="https://www.linkedin.com/in/ariel-molina-330292248/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                    <img src="assets/contact-icons/linkedin.png" alt="LinkedIn">
+                </a>
+                <a href="https://github.com/armolina179" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                    <img src="assets/contact-icons/github.png" alt="GitHub">
+                </a>
+                <a href="https://www.instagram.com/warmcomet" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                    <img src="assets/contact-icons/instagram.png" alt="Instagram">
+                </a>
+                <a href="mailto:armolina179@gmail.com" aria-label="Email">
+                    <img src="assets/contact-icons/email.png" alt="Email">
+                </a>
+            </div>
+            <div class="notes-container">
+                <h2 class="notes-title">Notes</h2>
+                <div class="notes-section">
+                    <button class="notes-toggle" aria-expanded="false">
+                        <span class="notes-toggle-text">December 25</span>
+                        <span class="notes-toggle-icon">+</span>
+                    </button>
+                    <div class="notes-content">
+                        <p>Coming soon! &#9829;</p>
+                    </div>
+                </div>
+                <div class="notes-section">
+                    <button class="notes-toggle" aria-expanded="false">
+                        <span class="notes-toggle-text">November 25</span>
+                        <span class="notes-toggle-icon">+</span>
+                    </button>
+                    <div class="notes-content">
+                        <p>Favorites: <br><br>
+                            <u>Album</u>: Rosal&igrave;a - LUX<br>
+                            <u>Book</u>: <em>Slow Down: The Degrowth Manifesto</em> by Kohei Saito</p>
+                    </div>
+                </div>
+                <div class="notes-section">
+                    <button class="notes-toggle" aria-expanded="false">
+                        <span class="notes-toggle-text">October 25</span>
+                        <span class="notes-toggle-icon">+</span>
+                    </button>
+                    <div class="notes-content">
+                        <p>Favorites: <br><br>
+                            <u>Album</u>: Daniel Caesar - Son of Spergy<br>
+                            <u>Book</u>: <em>Beyond Personhood: An Essay in Trans Philosophy</em> by Talia Mae Bettcher<br>
+                            <u>Film</u>: Chainsaw Man: Reze Arc </p>
+                    </div>
+                </div>
+                <div class="notes-section">
+                    <button class="notes-toggle" aria-expanded="false">
+                        <span class="notes-toggle-text">September 25</span>
+                        <span class="notes-toggle-icon">+</span>
+                    </button>
+                    <div class="notes-content">
+                        <p>Favorites: <br><br>
+                            <u>Album</u>: Yukimi - For You<br>
+                            <u>Book</u>: <em>On Freedom: Four Songs of Care and Constraint</em> by Maggie Nelson<br>
+                            <u>Film</u>: Chainsaw Man: Reze Arc </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="contact-video" aria-label="Contact Video">
+            <video src="assets/contact1.mp4" autoplay loop muted playsinline aria-label="Contact video"></video>
+        </section>
+    </main>
+    <script>
+        // Collapsible notes functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const toggles = document.querySelectorAll('.notes-toggle');
+            
+            toggles.forEach(toggle => {
+                toggle.addEventListener('click', function() {
+                    const isExpanded = this.getAttribute('aria-expanded') === 'true';
+                    const content = this.nextElementSibling;
+                    const icon = this.querySelector('.notes-toggle-icon');
+                    
+                    // Toggle state
+                    this.setAttribute('aria-expanded', !isExpanded);
+                    
+                    // Toggle content visibility
+                    if (isExpanded) {
+                        content.style.maxHeight = '0';
+                        icon.textContent = '+';
+                    } else {
+                        content.style.maxHeight = content.scrollHeight + 'px';
+                        icon.textContent = '−';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
