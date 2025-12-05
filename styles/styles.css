@@ -897,6 +897,10 @@ a { color: inherit; }
     margin-right: 0.5rem;
 }
 
+video, img {
+    background-color: yellow;
+}
+
 /* ========================================
    MEDIA QUERIES - CONSOLIDATED
    ======================================== */
@@ -1042,16 +1046,11 @@ a { color: inherit; }
     }
     
     .split__marquee {
+        align-items: center;
+        justify-content: center;
         grid-row: 1;
-        border-bottom: 1px solid black;
         border-top: 1px solid black;
-        height: 100%;
-    }
-    
-    .home-nav {
-        grid-row: 2;
-        margin-top: 5%;
-        align-items: baseline;
+        height: 80%;
     }
     
     .home-nav ul {
@@ -1059,6 +1058,7 @@ a { color: inherit; }
         flex-direction: column;
         gap: 2rem;
         justify-content: center;
+        transform: translateY(-15%);
     }
     
     .titlecard { 
@@ -1104,6 +1104,11 @@ a { color: inherit; }
         padding-top: 0;
     }
 
+    .about-content {
+        padding-top: 0;
+        margin-top: 0;
+    }
+
     /* Works Page */
     .works-page {
         padding: 1rem;
@@ -1135,6 +1140,8 @@ a { color: inherit; }
         align-self: center;
         justify-self: center;
         margin: 0 auto;
+        outline: 1px solid var(--black);
+        outline-offset: -1px;
     }
 
     .work-role {
@@ -1169,8 +1176,27 @@ a { color: inherit; }
         height: 35px;
     }
 
+    .contact-video {
+        height: 8vh;
+    }
+
+    .contact-video video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
     .notes-toggle {
         padding: 0.75rem 1rem;
+        width: 100%;
+    }
+
+    .notes-content {
+        width: 100%;
+    }
+
+    .notes-container {
+        width: 100%;
     }
 
     .notes-content p {
