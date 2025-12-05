@@ -1,3 +1,6 @@
+// Detect hover capability
+const hasHover = window.matchMedia('(hover: hover)').matches;
+
 const cursor = document.querySelector('.custom-cursor');
 
 if (cursor) {
@@ -127,9 +130,12 @@ if (cursor) {
     }
 
     previewLinks.forEach((link) => {
-        link.addEventListener('mouseenter', (e) => showPreview(e, link));
-        link.addEventListener('mouseleave', hidePreview);
-        link.addEventListener('mousemove', (e) => positionPreview(e));
+        // Only attach hover listeners if device supports hover
+        if (hasHover) {
+            link.addEventListener('mouseenter', (e) => showPreview(e, link));
+            link.addEventListener('mouseleave', hidePreview);
+            link.addEventListener('mousemove', (e) => positionPreview(e));
+        }
         // Ensure hiding if link is focused out with keyboard
         link.addEventListener('blur', hidePreview);
     });
@@ -230,11 +236,11 @@ if (cursor) {
     
     // openLightbox and closeLightbox are already defined above
     
-    // Create tooltip elements only if hover-triggers exist
+    // Create tooltip elements only if hover-triggers exist and device supports hover
     let tooltip = null;
     let tooltipArrow = null;
     
-    if (hoverTriggers.length > 0) {
+    if (hoverTriggers.length > 0 && hasHover) {
         tooltip = document.createElement('div');
         tooltip.className = 'tooltip-element';
         tooltip.textContent = 'Click to stamp image';
@@ -296,31 +302,44 @@ if (cursor) {
             tooltipArrow.classList.remove('visible');
         }
         
-        trigger.addEventListener('mouseenter', (e) => {
-            showTooltip();
+        // Only attach hover listeners if device supports hover
+        if (hasHover) {
+            trigger.addEventListener('mouseenter', (e) => {
+                showTooltip();
+                
+                if (!isImageLocked) {
+                    showImage(imagePath);
+                }
+            });
             
-            if (!isImageLocked) {
-                showImage(imagePath);
-            }
-        });
+            // Update tooltip position on scroll while hovering
+            let scrollHandler = () => {
+                if (trigger.matches(':hover')) {
+                    updateTooltipPosition();
+                }
+            };
+            window.addEventListener('scroll', scrollHandler, { passive: true });
+            
+            trigger.addEventListener('mouseleave', () => {
+                hideTooltip();
+                hideImage();
+            });
+        }
         
-        // Update tooltip position on scroll while hovering
-        let scrollHandler = () => {
-            if (trigger.matches(':hover')) {
-                updateTooltipPosition();
-            }
-        };
-        window.addEventListener('scroll', scrollHandler, { passive: true });
-        
-        trigger.addEventListener('mouseleave', () => {
-            hideTooltip();
-            hideImage();
-        });
-        
+        // Click behavior: stamp image for hover devices, open in new tab for touch devices
         trigger.addEventListener('click', (e) => {
             e.preventDefault();
             e.stopPropagation();
-            lockImage(imagePath);
+            
+            if (hasHover) {
+                // Hover devices: stamp image
+                lockImage(imagePath);
+            } else {
+                // Touch devices: open image in new tab
+                // Resolve relative path to absolute URL
+                const absolutePath = new URL(imagePath, window.location.href).href;
+                window.open(absolutePath, '_blank');
+            }
         });
     });
     

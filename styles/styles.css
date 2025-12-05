@@ -897,8 +897,16 @@ a { color: inherit; }
     margin-right: 0.5rem;
 }
 
-video, img {
+video:not(.hero-video) {
     background-color: yellow;
+}
+
+img {
+    background-color: yellow;
+}
+
+.contact-icons img {
+    background-color: transparent;
 }
 
 /* ========================================
@@ -909,6 +917,80 @@ video, img {
 @media (hover: none) {
     .custom-cursor {
         display: none;
+    }
+
+    /* Disable all hover states for touch devices */
+    .home-nav a:hover {
+        color: inherit;
+        letter-spacing: inherit;
+    }
+
+    .top-nav a:hover {
+        font-family: inherit;
+        color: inherit;
+        text-decoration: inherit;
+    }
+
+    .about-content a:hover {
+        letter-spacing: inherit;
+        font-family: inherit;
+        text-decoration: inherit;
+    }
+
+    .work-link:hover {
+        background-color: inherit;
+        color: inherit;
+        font-weight: inherit;
+    }
+
+    .work-link:hover::after {
+        transform: none;
+    }
+
+    .work-video {
+        outline: 1.5px solid black;
+        outline-offset: -1.5px;
+    }
+
+    .contact-icons a:hover {
+        transform: none;
+    }
+
+    .contact-icons a:hover img {
+        filter: none;
+    }
+
+    .notes-toggle:hover {
+        background-color: inherit;
+        color: inherit;
+    }
+
+    .image-expand-text:hover {
+        color: inherit;
+        text-decoration: inherit;
+        letter-spacing: inherit;
+    }
+
+    .lightbox-close:hover {
+        opacity: inherit;
+    }
+
+    .project-meta .work-link:hover,
+    .project-meta .work-link:focus {
+        color: inherit;
+        background-color: inherit;
+        text-decoration: inherit;
+        font-weight: inherit;
+    }
+
+    .hover-trigger:hover {
+        color: inherit;
+    }
+
+    .project-content a:hover {
+        letter-spacing: inherit;
+        font-family: inherit;
+        text-decoration: inherit;
     }
 }
 
@@ -1090,7 +1172,7 @@ video, img {
     .about-page {
         grid-template-columns: 1fr;
         grid-template-rows: auto 1fr;
-        margin-top: 60px;
+        margin-top: 5vh;
     }
 
     .about-hero {
@@ -1112,7 +1194,7 @@ video, img {
     /* Works Page */
     .works-page {
         padding: 1rem;
-        margin-top: 60px;
+        margin-top: 0;
     }
 
     .works-container {
@@ -1140,8 +1222,8 @@ video, img {
         align-self: center;
         justify-self: center;
         margin: 0 auto;
-        outline: 1px solid var(--black);
-        outline-offset: -1px;
+        outline: 1.5px solid var(--black);
+        outline-offset: -1.5px;
     }
 
     .work-role {
@@ -1159,7 +1241,7 @@ video, img {
 
     /* Contact Page */
     .contact-page {
-        margin-top: 60px;
+        margin-top: 5vh;
     }
 
     .contact-notes {
@@ -1168,12 +1250,12 @@ video, img {
 
     .contact-icons {
         gap: 1.5rem;
-        margin-bottom: 2rem;
+        margin-bottom: 0.5rem;
     }
 
     .contact-icons img {
-        width: 35px;
-        height: 35px;
+        width: 8vw; 
+        aspect-ratio: 1/1;
     }
 
     .contact-video {
@@ -1184,6 +1266,10 @@ video, img {
         width: 100%;
         height: 100%;
         object-fit: cover;
+    }
+    
+    .notes-container {
+        margin-top: -1rem;
     }
     
     .notes-toggle {
