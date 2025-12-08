@@ -1183,6 +1183,7 @@ img {
     }
 
     .about-hero {
+        margin-top: 2rem;
         height: 40vh;
         border: none;
         position: relative;
