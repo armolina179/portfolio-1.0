@@ -37,11 +37,15 @@
     --blue: #0020FF;
 }
 
-* { box-sizing: border-box; }
-
-
-* {
-    cursor: none; 
+* { 
+    box-sizing: border-box; 
+    margin: 0;
+    padding: 0;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%;
+    cursor: none;
 }
 
 .custom-cursor {
@@ -59,7 +63,9 @@
     mix-blend-mode:multiply;
 }
 
-html, body { height: 100%; }
+html, body { 
+    height: 100%; 
+}
 
 body {
     margin: 0;
@@ -220,6 +226,7 @@ a { color: inherit; }
 
 .top-nav a:hover {
     font-family: "Instrument Italic", ui-serif, Georgia, serif;
+    font-style: italic;
     color: var(--blue);
     text-decoration: underline;
     transition: 0.3s ease-in-out,
@@ -227,6 +234,7 @@ a { color: inherit; }
 
 .top-nav a.current {
     font-family: "Instrument Italic", ui-serif, Georgia, serif;
+    font-style: italic;
     color: var(--blue);
 }
 
@@ -303,6 +311,7 @@ a { color: inherit; }
 .about-content a:hover {
     letter-spacing: 3px;
     font-family: "Instrument Italic", ui-serif, Georgia, serif;
+    font-style: italic;
     text-decoration: underline;
 }
 
@@ -766,7 +775,7 @@ a { color: inherit; }
 
 .project-meta p {
     line-height: 1.3 !important;
-    letter-spacing: 0; /* optional if you don't want the extra spacing */
+    letter-spacing: 0; 
   }
 
 .project-subsection {
@@ -782,7 +791,7 @@ a { color: inherit; }
 }
 
 .project-subheading {
-    font-size: 1.25rem;
+    font-size: clamp(1rem, 0.9rem + 0.5vw, 1.125rem);
     font-family: "NectoMono", ui-monospace, "Courier New", monospace;
     color: var(--black);
     margin-bottom: 1rem;
@@ -875,6 +884,7 @@ a { color: inherit; }
 .project-content a:hover {
     letter-spacing: 2px;
     font-family: "Instrument Italic", ui-serif, Georgia, serif;
+    font-style: italic;
     text-decoration: underline;
 }
 
