@@ -1147,7 +1147,7 @@ img {
         flex-direction: column;
         gap: 2rem;
         justify-content: center;
-        transform: translateY(-15%);
+        transform: translateY(-8%);
     }
     
     .titlecard { 
