@@ -3,10 +3,281 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Mountain Communities of the World — Design Brief</title>
+    <link rel="preload" href="../../../fonts/InstrumentSerif-Regular.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="preload" href="../../../fonts/NectoMono-Regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="../../../styles/styles.css">
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script defer src="../../../scripts.js?v=2"></script>
+    <link rel="icon" href="/assets/favicon.png" type="favicon/img">
 </head>
 <body>
-    <h1> Work in progress. </h1>
-    <a href="/index.html">Home</a>
+    <div class="custom-cursor"></div>
+    <nav class="top-nav" aria-label="Main Navigation">
+        <ul>
+            <li><a href="../../../index.html">home</a></li>
+            <li> | </li>
+            <li><a href="../../../about.html">about</a></li>
+            <li> | </li>
+            <li><a href="../../../works.html">works</a></li>
+            <li> | </li>
+            <li><a href="../../../contact.html">contact</a></li>
+        </ul>
+    </nav>
+    <main class="project-page" role="main">
+        <div class="project-hero">
+            <video class="project-video" src="mcotw.mp4" autoplay loop muted playsinline aria-label="Mountain Communities of the World project video"></video>
+            <div class="project-image-container" style="display: none;">
+                <img class="project-image" src="" alt="">
+                <p class="image-expand-text">[Click to expand]</p>
+            </div>
+        </div>
+    <section class="project-section">
+        <div class="project-content">
+            <h1 class="project-title">Mountain Communities of the World</h1>
+            <div class="project-meta">
+                <p><strong>Dates:</strong> [Start – End]</p>
+                <p><strong>Role:</strong> Full-stack Developer & Designer</p>
+                <p><strong>Tech Stack:</strong> HTML5, CSS3 (Custom Properties, Flexbox, Grid), Vanilla JavaScript (ES6+), GSAP 3.12.5 (animations, Flip plugin), Slick Carousel 1.8.1, jQuery 3.7.1</p> 
+                <p><strong>Design Tools:</strong> Figma, Photoshop</p>
+                <p><strong>Format:</strong> Interactive multi-page website</p>
+                <a class="work-link" target="_blank" href="#">Click here to visit the website</a>
+            </div>
+            <section class="project-subsection">
+                <h2 class="project-heading">Project Overview</h2>
+                <p>Mountain Communities of the World is an educational website that shares stories, context, and data about mountain cultures and landscapes, highlighting their importance and resilience in our rapidly changing world. The platform serves educators, students, researchers, and the general public interested in geography, cultural preservation, and environmental justice. Through visual storytelling, interactive exploration, and accessible design, the project combines photography, video, statistics, and geographic data to communicate the critical role mountain communities play in global biodiversity, freshwater resources, and cultural diversity. The website demonstrates how thoughtful information design and user experience can make complex environmental and cultural topics engaging and accessible to diverse audiences.</p>
+            </section>
+
+            <section class="project-subsection">
+                <h2 class="project-heading">Contextual Grounding</h2>
+                <p><strong>What the Project Is:</strong> Mountain Communities of the World is an interactive educational platform that showcases mountain communities worldwide through visual storytelling, statistical data visualization, and geographic exploration. The project presents information about over 1 billion people living in mountain regions, highlighting their contributions to biodiversity, freshwater resources, and cultural heritage while addressing the challenges they face from isolation, climate change, and economic precarity. The website features a multi-page structure with a hero video, an interactive carousel of community profiles, a clickable world map, and comprehensive information panels, all designed with accessibility and responsive design as core principles.</p>
+                <p><strong>Conceptual Foundation:</strong></p>
+                <p>The project is informed by several conceptual frameworks and design philosophies. Environmental justice and cultural preservation principles guide the content selection and presentation, ensuring that mountain communities are represented with dignity and accuracy. Data visualization and information design theories inform how statistics are presented in accessible table formats and how complex geographic information is made interactive through the map interface. Accessible web design principles (WCAG 2.1) are integrated throughout, from semantic HTML structure to ARIA labels, keyboard navigation, and reduced motion preferences. The technical approach draws from Single Page Application (SPA) patterns, using hash-based routing and GSAP Flip plugin to create smooth, performant transitions without requiring a full framework. The design aesthetic is influenced by minimalist information design, prioritizing content clarity and user experience over decorative elements.</p>
+                <p><strong>Audience & Practice Demonstration:</strong></p>
+                <p>The primary audience includes educators seeking resources for geography, environmental studies, and cultural education; students at various levels researching mountain communities; researchers and academics studying climate change impacts and cultural preservation; and the general public interested in global geography and environmental justice. The project demonstrates proficiency in responsive web design with mobile-first approaches, advanced CSS techniques using custom properties and modern layout systems (Grid and Flexbox), JavaScript animation and interaction design using GSAP, accessible form validation patterns, information architecture and content strategy, visual storytelling through photography and video integration, and performance optimization for media assets. The work showcases the ability to balance technical implementation with thoughtful user experience design.</p>
+                <p><strong>Approach Taken:</strong></p>
+                <p>The design approach prioritizes content-first information hierarchy, ensuring that educational content is immediately accessible and well-organized. A minimalist aesthetic with an earth-tone color palette (sage greens, clay, rust) reflects the natural environments being represented while maintaining excellent readability and contrast. Smooth, purposeful animations enhance user experience without overwhelming the content, with all motion respecting user preferences for reduced motion. The technical architecture emphasizes performance and accessibility, using static HTML/CSS/JavaScript without heavy frameworks, modular code organization through IIFE patterns, and progressive enhancement principles. Interactive elements are designed to be discoverable and usable through multiple input methods (mouse, keyboard, touch), and the responsive design ensures the experience is optimized across all device sizes.</p>
+            </section>
+
+            <section class="project-subsection">
+                <h2 class="project-heading">Phase 1 — Research & Concept Development</h2>
+                <h3 class="project-subheading">Initial Research, Inspirations & Readings</h3>
+                <p><strong>Research Data Points:</strong></p>
+                <p>The project began with research into global mountain community statistics and challenges. Key data points that informed the content include:</p>
+                <ul>
+                    <li>Over 1 billion people living in mountain regions worldwide</li>
+                    <li>Mountains housing approximately 25% of terrestrial biodiversity</li>
+                    <li>Mountains providing 60-80% of the world's freshwater resources</li>
+                    <li>Hundreds of indigenous languages and cultures found in mountain areas</li>
+                    <li>Mountain regions experiencing climate change at twice the global average rate</li>
+                </ul>
+                <p>Research extended to understanding the specific communities featured, including Quechua people in the Andes, Sherpa and other Himalayan communities, Berber villages in the Atlas Mountains, and various other mountain-dwelling cultures across six continents.</p>
+                <h3 class="project-subheading">Inspirational Works</h3>
+                <p>The project draws inspiration from:</p>
+                <ul>
+                    <li>Data-driven storytelling websites that effectively communicate complex information through visual design</li>
+                    <li>Cultural preservation platforms that respectfully represent indigenous and traditional communities</li>
+                    <li>Accessible web design showcases that demonstrate how beautiful design and accessibility can coexist</li>
+                    <li>Interactive map interfaces that make geographic information engaging and discoverable</li>
+                    <li>Nature photography and documentary work that captures the beauty and resilience of mountain landscapes and communities</li>
+                </ul>
+                <h3 class="project-subheading">Concept Formation & Early Mappings</h3>
+                <p>The concept evolved from a simple informational site to an interactive exploration platform. Early ideation explored different ways to present the information:</p>
+                <ul>
+                    <li>A two-column split-panel layout for the About section emerged as a way to maintain visual engagement (video) while presenting dense informational content</li>
+                    <li>The carousel concept for the Explore page developed as a means to showcase multiple communities without overwhelming the user, using center-mode to focus attention while allowing exploration</li>
+                    <li>The interactive map concept grew from the need to make geographic connections clear and discoverable, using clickable hotspots positioned over a world map image</li>
+                    <li>System diagrams mapped out the user flow: Home (hero introduction) → About (detailed information) → Explore (community profiles) → Map (geographic exploration) → Contact (engagement)</li>
+                    <li>The SPA routing pattern for Home/About sections was conceived to create a seamless transition experience while maintaining the video hero element</li>
+                </ul>
+                <h3 class="project-subheading">Goals & Constraints</h3>
+                <p><strong>Goals:</strong></p>
+                <ul>
+                    <li>Create an educational resource that effectively communicates the importance of mountain communities to a diverse audience, combining statistical data with visual storytelling to make complex topics accessible and engaging</li>
+                    <li>Design and develop a fully accessible website that meets WCAG 2.1 AA standards, ensuring the content is available to users with various abilities and assistive technologies</li>
+                    <li>Build a performant, responsive website that works seamlessly across all device sizes, from mobile phones to large desktop displays, with optimized media loading and smooth animations</li>
+                </ul>
+                <p><strong>Constraints:</strong></p>
+                <ul>
+                    <li>The website must function as a static site without server-side processing, requiring all interactivity to be handled client-side through JavaScript</li>
+                    <li>All accessibility requirements must be met without compromising the visual design or user experience, requiring careful attention to ARIA labels, keyboard navigation, and screen reader compatibility</li>
+                    <li>The design must be responsive across a wide range of screen sizes, with breakpoints at 980px, 768px, 640px, and 480px, requiring flexible layouts and fluid typography</li>
+                    <li>Video and image assets must be optimized for performance while maintaining visual quality, balancing file size with user experience</li>
+                </ul>
+            </section>
+
+            <section class="project-subsection">
+                <h2 class="project-heading">Phase 2 — Planning & Design</h2>
+                <h3 class="project-subheading">Wireframes, Sitemaps & Storyboards</h3>
+                <p>The site architecture follows a clear navigation structure:</p>
+                <ul>
+                    <li>Home page features a full-width hero video with animated title overlay</li>
+                    <li>About section uses a two-column layout with sticky video on the left and scrollable content panel on the right, accessible via hash routing (#/about) from the home page</li>
+                    <li>Explore page presents a center-mode carousel showcasing four mountain communities with custom navigation</li>
+                    <li>Map page features an interactive world map with clickable continent hotspots that populate an information panel</li>
+                    <li>Contact page contains a validated form for user engagement</li>
+                </ul>
+                <p>The SPA routing pattern for Home/About sections allows the hero video element to smoothly transition between layouts using GSAP Flip, creating a cohesive experience while maintaining separate page contexts for other sections. Wireframes established the grid system (max-width 1280px), spacing hierarchy, and content relationships across all pages.</p>
+                <h3 class="project-subheading">Style Guide, Typography & Color Systems</h3>
+                <p>The visual language is built around an earth-tone color palette that reflects the natural environments being represented:</p>
+                <ul class="strong-list">
+                    <li><strong>Primary color:</strong> Sage green (#7f9278, --sage-600) used for navigation, panels, and primary UI elements</li>
+                    <li><strong>Secondary colors:</strong> Clay (#b98343, --clay-400) and rust (#b25434, --rust-500) used for accent elements and title animations</li>
+                    <li><strong>Supporting colors:</strong> Foam (#9fb49f, --foam-300) for subtle highlights, neutral background (#f5f7f2, --bg) for page background, and dark ink (#1c2024, --ink) for primary text</li>
+                    <li><strong>Typography system:</strong> Two custom font families: Ayr Saturday Night Interlock serves as the display font for hero titles, with three color-coded lines that animate in sequence; Antique Olive Std (Roman and Light weights) serves as the body font family, providing a distinctive, readable character</li>
+                    <li><strong>Type scale:</strong> Uses fluid clamp() functions for responsive sizing: --step--1 (0.86rem to 0.98rem), --step-0 (1.00rem to 1.10rem), --step-1 (1.15rem to 1.45rem), and --step-3 (2.2rem to 6.2rem) for large headings</li>
+                    <li><strong>Layout principles:</strong> Consistent 22px border radius (--radius-xl) for rounded corners, maximum content width of 1280px, and fluid spacing using clamp() for responsive gaps and padding</li>
+                </ul>
+                <h3 class="project-subheading">Accessibility Decisions</h3>
+                <p>Accessibility was integrated from the initial design phase, not added as an afterthought:</p>
+                <ul>
+                    <li><strong>Semantic HTML structure:</strong> Uses proper heading hierarchy, landmark regions (header, main, aside, section), and form elements with associated labels</li>
+                    <li><strong>ARIA implementation:</strong> Includes aria-label attributes for icon-only buttons and decorative elements, aria-live regions for dynamic content updates (screen reader announcements), aria-pressed states for interactive map hotspots, and role attributes where semantic HTML isn't sufficient</li>
+                    <li><strong>Keyboard navigation:</strong> All interactive elements are keyboard accessible, focus indicators are clearly visible, tab order follows logical content flow, and Enter/Space key activation works for all buttons and interactive elements</li>
+                    <li><strong>Focus management:</strong> Includes programmatic focus for screen reader users (About section H1 receives focus on load), scroll position preservation when navigating between sections, and skip links for main content</li>
+                    <li><strong>Motion preferences:</strong> All animations check for prefers-reduced-motion media query, animations can be disabled for users who prefer reduced motion, and essential functionality works without any animations</li>
+                    <li><strong>Form accessibility:</strong> Real-time validation with clear error messages, aria-invalid attributes for invalid fields, aria-describedby linking errors to inputs, and honeypot field for spam prevention without impacting accessibility</li>
+                </ul>
+                <h3 class="project-subheading">Technical Planning & Architecture</h3>
+                <p>The technical architecture prioritizes performance, maintainability, and accessibility:</p>
+                <ul class="strong-list">
+                    <li><strong>Static site structure:</strong> Uses separate HTML files for each major section (index.html, explore.html, map.html, contact.html) with shared CSS and JavaScript, allowing for straightforward deployment without build processes</li>
+                    <li><strong>Hash-based routing:</strong> Implements SPA functionality for Home/About sections using location.hash, enabling smooth transitions while maintaining browser history support</li>
+                    <li><strong>GSAP Flip plugin integration:</strong> Handles complex element transitions, specifically the hero video moving between home and about layouts with smooth morphing animations</li>
+                    <li><strong>JavaScript architecture:</strong> Uses Immediately Invoked Function Expressions (IIFE) to create isolated modules for each page feature (aboutscript.js, explorescript.js, map.js, contactvalidation.js), preventing global namespace pollution and enabling code reusability</li>
+                    <li><strong>CSS architecture:</strong> Leverages custom properties (CSS variables) for theming and maintainability, with design tokens defined in :root for colors, spacing, typography, and layout values</li>
+                    <li><strong>Responsive layout system:</strong> Uses CSS Grid for two-dimensional layouts (about section, map page), Flexbox for one-dimensional layouts and component alignment, and media queries with breakpoints at 980px, 768px, 640px, and 480px for device-specific optimizations</li>
+                </ul>
+            </section>
+
+            <section class="project-subsection">
+                <h2 class="project-heading">Phase 3 — Prototyping & Development</h2>
+                <h3 class="project-subheading">Code Implementation</h3>
+                <p>The core structure was built using semantic HTML5 with clear sectioning: each page follows a consistent structure with header navigation, main content area, and appropriate ARIA landmarks. CSS architecture was organized into logical sections: design tokens (CSS custom properties), base styles and typography, component styles (hero, panels, forms), page-specific styles, and utility classes. JavaScript was organized into modular files, each handling specific functionality: aboutscript.js manages SPA routing and hero transitions, explorescript.js initializes the Slick carousel, map.js handles interactive map functionality, and contactvalidation.js provides form validation. GSAP integration required careful setup: the Flip plugin is loaded after core GSAP, state is captured before DOM manipulation, and animations respect reduced motion preferences. The hero video component was designed to be reusable: a single .hero-wrap element contains both the video and title, and JavaScript moves this element between .home-hero-slot and .about-hero-slot containers as users navigate.</p>
+                <h3 class="project-subheading">Interaction Logic</h3>
+                <ul>
+                    <li><strong>Hero video transitions:</strong> Between home and about sections using GSAP Flip: when navigating to About, the hero element is moved to the left column and resized, with Flip animating the position and size changes smoothly</li>
+                    <li><strong>Page fade transitions:</strong> Provide visual continuity: links marked with data-fade attribute trigger a 300ms fade-out before navigation, and pages fade in on load, creating a cohesive experience across the multi-page structure</li>
+                    <li><strong>Carousel navigation:</strong> Uses Slick Carousel with custom SVG arrow buttons: center mode highlights the active slide, custom arrows replace default Slick styling, and keyboard navigation is supported through Slick's built-in accessibility features</li>
+                    <li><strong>Interactive map hotspots:</strong> Use click and keyboard events: each continent button has a data-key attribute, clicking or pressing Enter/Space activates the hotspot, aria-pressed state indicates selection, and content dynamically updates in the left panel</li>
+                    <li><strong>Form validation:</strong> Provides real-time feedback: validation occurs on blur events, errors are displayed immediately with clear messaging, aria-invalid attributes mark problematic fields, and the form prevents submission until all required fields are valid</li>
+                    <li><strong>Scroll state preservation:</strong> In the About section remembers scroll position when navigating away and restores it when returning, improving user experience during exploration</li>
+                </ul>
+                <h3 class="project-subheading">Animation, Graphics & Motion Exploration</h3>
+                <p>Staggered title line animations create visual interest on the hero: three title lines (Mountain, Communities, of the World) animate in sequence with 120ms delays, using a floatIn keyframe animation that combines opacity fade, vertical translation, and subtle scale effects, with text shadows for depth. GSAP Flip transitions handle the complex hero element movement: the plugin captures the element's state before DOM manipulation, then animates it to the new position and size, creating a seamless morphing effect that feels natural and performant. Page fade transitions use CSS classes and transitions: .page-fade-out class triggers opacity and transform animations, navigation occurs after the fade completes (300ms delay), and .page-fade-in class animates pages on load. Carousel center-mode effects create focus: the center slide has full opacity and scale, side slides are reduced to 65% opacity with desaturated filters, and smooth transitions (500ms) move between slides. Micro-interactions enhance usability: hover states on navigation links include color changes and subtle scale transforms, button presses have active states with scale-down feedback, and focus indicators use outline styles that meet accessibility contrast requirements. All animations check for prefers-reduced-motion and can be disabled, ensuring the site remains usable for users with motion sensitivity.</p>
+                <h3 class="project-subheading">Components Built & Media Created</h3>
+                <ul>
+                    <li><strong>Hero video component:</strong> A reusable element containing HTML5 video element with poster image, autoplay, loop, and muted attributes for performance, three-line animated title overlay with custom display font, and JavaScript logic to move between page contexts</li>
+                    <li><strong>About split-panel layout:</strong> Features left column with sticky-positioned video (stays visible while scrolling), right column with scrollable content panel, matching heights using flexbox and calc() viewport calculations, and smooth transitions when navigating between home and about</li>
+                    <li><strong>Explore carousel component:</strong> Integrates Slick Carousel library with center mode configuration, custom SVG arrow buttons with accessible labels, responsive breakpoints adjusting slides shown (3 → 1 on mobile), and image optimization with lazy loading</li>
+                    <li><strong>Interactive world map:</strong> Includes world map image with aspect ratio preservation, six clickable hotspot buttons positioned using CSS custom properties (--x, --y), dynamic content rendering in left panel based on selection, and keyboard-accessible interaction patterns</li>
+                    <li><strong>Contact form component:</strong> Features semantic form structure with proper labels, real-time validation with clear error messaging, honeypot field for spam prevention, and accessible error announcements</li>
+                    <li><strong>Responsive navigation system:</strong> Provides sticky header that remains visible during scroll, active state indicators for current page, smooth fade transitions between pages, and mobile-optimized layout</li>
+                    <li><strong>Custom font loading system:</strong> Implements @font-face declarations for display and body fonts, font-display: swap for performance, and fallback font stacks for reliability</li>
+                </ul>
+            </section>
+
+            <section class="project-subsection">
+                <h2 class="project-heading">Phase 4 — Testing, Iteration & Refinement</h2>
+                <h3 class="project-subheading">User Testing & Feedback</h3>
+                <p>[User testing and feedback summaries would be documented here based on actual testing conducted during the project development process.]</p>
+                <h3 class="project-subheading">Visual Polish</h3>
+                <p>The final visual refinements focused on creating a cohesive, polished experience. Color palette was refined to ensure sufficient contrast ratios for accessibility: text on sage green background meets WCAG AA standards, and color combinations were tested for colorblind accessibility. Spacing system was standardized using CSS custom properties and clamp() functions, ensuring consistent rhythm across all pages while remaining responsive. Animations were fine-tuned for performance and feel: durations were optimized (300ms for page transitions, 500ms for carousel, 650ms for Flip transitions), easing functions were selected for natural motion (ease-out for entrances, power2.out for complex transitions), and will-change properties were added where appropriate for GPU acceleration. Responsive breakpoints were tested and refined: 980px breakpoint switches about layout from two-column to single column, 768px optimizes carousel for tablet viewing, 640px adjusts map layout and touch targets, and 480px ensures mobile usability with appropriately sized interactive elements.</p>
+                <h3 class="project-subheading">Adjustments for Clarity, Storytelling & Accessibility</h3>
+                <p>Several refinements were made to improve communication and usability:</p>
+                <ul>
+                    <li><strong>ARIA labels enhanced:</strong> Descriptive labels added to icon buttons, aria-live regions added for dynamic content updates, and landmark regions properly labeled for screen reader navigation</li>
+                    <li><strong>Focus indicators improved:</strong> Visible outline styles added to all interactive elements, focus order verified to follow logical content flow, and skip links considered for keyboard users</li>
+                    <li><strong>Visual hierarchy clarified:</strong> Heading levels properly structured, content grouped logically with spacing, and important information (statistics, key facts) given visual prominence through typography and layout</li>
+                    <li><strong>Accessible form error messaging:</strong> Errors appear immediately with clear, actionable language, errors are associated with inputs via aria-describedby, and error states are visually distinct without relying solely on color</li>
+                    <li><strong>Mobile layouts optimized:</strong> Touch targets sized appropriately (minimum 44x44px), content reflows logically on small screens, and navigation remains accessible on all devices</li>
+                </ul>
+            </section>
+
+            <section class="project-subsection">
+                <h2 class="project-heading">Phase 5 — Final Output</h2>
+                <h3 class="project-subheading">Final Deliverable Details</h3>
+                <p>The final deliverable is a multi-page static website consisting of five main pages: index.html (home and about sections with SPA routing), explore.html (community carousel), map.html (interactive world map), and contact.html (contact form). The site is fully responsive with a mobile-first approach, using fluid typography, flexible layouts, and optimized breakpoints for devices ranging from 320px to 2560px+ widths. Accessibility features target WCAG 2.1 AA compliance with semantic HTML, comprehensive ARIA implementation, keyboard navigation support, and reduced motion preferences. Performance is optimized through efficient animations using GSAP and CSS transforms, lazy loading for carousel images, and optimized video assets with poster images. The site is cross-browser compatible, tested and working in modern browsers (Chrome, Firefox, Safari, Edge) with graceful degradation for older browsers.</p>
+                <h3 class="project-subheading">Features Completed</h3>
+                <ul class="highlight-list">
+                    <li>Hero video with animated three-line title overlay that transitions smoothly between home and about layouts</li>
+                    <li>SPA routing system for home/about sections using hash-based navigation with GSAP Flip animations</li>
+                    <li>Interactive carousel showcasing four mountain communities (Quechua, Jorsale, Quanaaq, Berber) with center-mode focus and custom navigation</li>
+                    <li>Interactive world map with six clickable continent hotspots (North America, South America, Europe, Africa, Asia, Oceania) that dynamically populate information panels</li>
+                    <li>Contact form with comprehensive client-side validation, real-time error feedback, and spam prevention</li>
+                    <li>Responsive navigation system with sticky header, active state indicators, and smooth page transitions</li>
+                    <li>Comprehensive accessibility features including ARIA labels, keyboard navigation, screen reader support, and reduced motion preferences</li>
+                    <li>Statistics table presenting key data about mountain communities in an accessible, scannable format</li>
+                </ul>
+                <h3 class="project-subheading">Product Delivered</h3>
+                <p>The final product is an educational website that successfully communicates the importance of mountain communities through engaging visual storytelling, interactive exploration, and accessible design. The platform combines photography, video, statistics, and geographic data into a cohesive experience that serves educators, students, researchers, and the general public. The website demonstrates how thoughtful information design and user experience can make complex environmental and cultural topics accessible and engaging. Through its responsive design, comprehensive accessibility features, and performance optimizations, the site ensures that the critical message about mountain communities' importance and challenges reaches the widest possible audience. The project successfully balances aesthetic appeal with functional requirements, creating a platform that is both beautiful and usable.</p>
+            </section>
+
+            <section class="project-subsection">
+                <h2 class="project-heading">Reflection & Future Plans</h2>
+                <h3 class="project-subheading">What I Learned</h3>
+                <p>This project provided valuable learning experiences across multiple domains:</p>
+                <ul class="strong-list">
+                    <li><strong>GSAP Flip plugin mastery:</strong> Understanding how to capture element state, animate complex position and size changes, and integrate with routing systems opened new possibilities for creating seamless user experiences</li>
+                    <li><strong>Accessible form validation patterns:</strong> Implementing real-time validation with proper ARIA attributes, error messaging, and user feedback taught the importance of inclusive design from the ground up</li>
+                    <li><strong>Advanced responsive design techniques:</strong> Using CSS Grid and Flexbox together, implementing fluid typography with clamp(), and creating truly responsive layouts that work across all devices required deep understanding of modern CSS</li>
+                    <li><strong>Performance optimization for video assets:</strong> Balancing visual quality with load times, implementing poster images, and using appropriate video attributes (autoplay, loop, muted) taught important lessons about media optimization</li>
+                    <li><strong>SPA patterns without frameworks:</strong> Building single-page application functionality using vanilla JavaScript and hash routing demonstrated that complex interactions don't always require heavy frameworks, leading to better performance and maintainability</li>
+                </ul>
+                <h3 class="project-subheading">Challenges & Breakthroughs</h3>
+                <p><strong>Challenges:</strong></p>
+                <ul>
+                    <li>Implementing smooth hero transitions between layouts: the initial challenge was moving the hero element between different page contexts while maintaining smooth animations</li>
+                    <li>Ensuring accessibility while maintaining visual appeal: there was initial concern that comprehensive accessibility features might compromise the design aesthetic</li>
+                    <li>Creating responsive carousel with custom controls: integrating Slick Carousel while maintaining full control over styling and ensuring accessibility required careful configuration and CSS overrides</li>
+                    <li>Balancing animation performance with user experience: ensuring smooth 60fps animations while respecting reduced motion preferences required careful implementation</li>
+                </ul>
+                <p><strong>Breakthroughs:</strong></p>
+                <ul>
+                    <li>The breakthrough came with GSAP Flip plugin, which handles the complex state capture and animation automatically, creating a seamless morphing effect that would have been extremely difficult to achieve with CSS alone</li>
+                    <li>The breakthrough was realizing that accessibility and beautiful design are not mutually exclusive—proper ARIA labels, semantic HTML, and keyboard navigation actually enhance the user experience for all users, not just those using assistive technologies</li>
+                    <li>The breakthrough was using custom arrow templates with inline SVG, allowing complete visual control while maintaining accessibility</li>
+                    <li>The breakthrough was using CSS will-change properties strategically and checking prefers-reduced-motion before applying animations</li>
+                </ul>
+                <h3 class="project-subheading">How the Project Shaped My Design Philosophy</h3>
+                <p>This project fundamentally shaped my approach to web design and development:</p>
+                <ul>
+                    <li><strong>Emphasis on accessibility as foundation, not afterthought:</strong> Integrating accessibility from the initial design phase rather than adding it later resulted in a better product overall. This experience reinforced that accessible design is simply good design—clear information hierarchy, logical navigation, and thoughtful interactions benefit all users</li>
+                    <li><strong>Content-first approach to information design:</strong> Prioritizing the educational content and ensuring it's immediately accessible led to design decisions that serve the user's goals rather than decorative aesthetics. This reinforced the importance of understanding user needs and designing to meet those needs</li>
+                    <li><strong>Respect for user preferences:</strong> Implementing reduced motion support and ensuring the site works without JavaScript taught the importance of respecting user agency and providing options rather than forcing a single experience</li>
+                    <li><strong>Clean, minimal aesthetic that serves the content:</strong> The earth-tone palette and minimalist design emerged from the need to let the photography and content shine, not from arbitrary aesthetic choices. This reinforced that design should enhance content, not compete with it</li>
+                    <li><strong>Performance and accessibility as user experience:</strong> Optimizing for performance and ensuring accessibility aren't separate concerns from user experience—they are user experience. A slow, inaccessible site fails its users regardless of how beautiful it looks</li>
+                </ul>
+                <h3 class="project-subheading">Future Plans</h3>
+                <p><strong>Features to Add or Extend:</strong></p>
+                <ul>
+                    <li>Backend integration for contact form: implementing server-side form processing to enable actual message submission, with email notifications and potential database storage for inquiries</li>
+                    <li>Expand community profiles with more detailed information: adding deeper content for each featured community, including history, cultural practices, current challenges, and conservation efforts, potentially with individual detail pages</li>
+                    <li>Add search/filter functionality: implementing search capabilities to help users find specific communities, regions, or topics of interest, with filtering by continent, climate challenges, or cultural characteristics</li>
+                    <li>Implement data visualization for statistics: creating interactive charts and graphs to visualize the statistical data, making trends and relationships more apparent and engaging</li>
+                    <li>Add more interactive map features: expanding map functionality with zoom capabilities, additional data layers, and potentially integrating with mapping APIs for more detailed geographic information</li>
+                </ul>
+                <p><strong>Technical Improvements:</strong></p>
+                <ul>
+                    <li>Consider CMS integration for content management: implementing a headless CMS would allow non-technical users to update content, add new communities, and manage the site's information without requiring code changes. This would make the platform more sustainable and easier to maintain long-term</li>
+                </ul>
+            </section>
+
+            <section class="project-subsection">
+                <h2 class="project-heading">Summary</h2>
+                <p>Mountain Communities of the World represents a synthesis of technical skill, design sensibility, and social consciousness, demonstrating how digital platforms can serve educational and advocacy purposes while maintaining high standards for user experience and accessibility. The project bridges cultural awareness, environmental consciousness, and accessible web design, creating a platform that not only informs but also engages and inspires action. Through its thoughtful information architecture, responsive design, and comprehensive accessibility features, the website ensures that critical messages about mountain communities' importance and challenges reach diverse audiences across all devices and abilities. The work showcases proficiency in modern web technologies, animation, and user experience design while maintaining a commitment to inclusive design principles. As a portfolio piece, it demonstrates the ability to balance aesthetic appeal with functional requirements, technical implementation with user needs, and creative vision with practical constraints—skills essential for creating meaningful digital experiences that serve both users and the causes they support.</p>
+            </section>
+        </div>
+    </section>
+    </main>
+    <!-- Lightbox for expanded images -->
+    <div class="lightbox" id="lightbox" style="display: none;">
+        <div class="lightbox-overlay"></div>
+        <div class="lightbox-content">
+            <button class="lightbox-close" aria-label="Close lightbox">&times;</button>
+            <img class="lightbox-image" src="" alt="">
+        </div>
+    </div>
 </body>
 </html>
