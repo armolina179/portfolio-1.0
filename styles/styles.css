@@ -335,8 +335,7 @@ a { color: inherit; }
     width: 100%;
     aspect-ratio: 1;
     overflow: hidden;
-    outline: 1px solid var(--black);
-    outline-offset: -1px;
+    border: 1px solid var(--black);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -955,8 +954,7 @@ img {
     }
 
     .work-video {
-        outline: 1.5px solid black;
-        outline-offset: -1.5px;
+        border: 1px solid black;
     }
 
     .contact-icons a:hover {
@@ -998,6 +996,7 @@ img {
         letter-spacing: inherit;
         font-family: inherit;
         text-decoration: inherit;
+        color: var(--blue);
     }
 }
 
@@ -1230,8 +1229,7 @@ img {
         align-self: center;
         justify-self: center;
         margin: 0 auto;
-        outline: 1.5px solid var(--black);
-        outline-offset: -1.5px;
+        border: 1px solid var(--black);
     }
 
     .work-role {
