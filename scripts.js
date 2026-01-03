@@ -380,3 +380,54 @@ if (cursor) {
         }
     });
 })();
+
+// Phase Dropdown Toggle Functionality
+(function() {
+    const phaseToggles = document.querySelectorAll('.phase-toggle');
+    
+    if (phaseToggles.length === 0) return;
+    
+    phaseToggles.forEach(toggle => {
+        const phaseContent = toggle.nextElementSibling;
+        
+        if (!phaseContent || !phaseContent.classList.contains('phase-content')) {
+            return;
+        }
+        
+        // Set initial state - collapsed by default
+        phaseContent.style.maxHeight = '0';
+        
+        // Handle keyboard accessibility
+        toggle.setAttribute('role', 'button');
+        toggle.setAttribute('tabindex', '0');
+        toggle.setAttribute('aria-expanded', 'false');
+        
+        function handleToggle() {
+            const isExpanded = phaseContent.classList.contains('expanded');
+            
+            if (isExpanded) {
+                // Collapse
+                phaseContent.classList.remove('expanded');
+                phaseContent.style.maxHeight = '0';
+                toggle.classList.remove('active');
+                toggle.setAttribute('aria-expanded', 'false');
+            } else {
+                // Expand
+                phaseContent.classList.add('expanded');
+                // Set max-height to scrollHeight for smooth animation
+                phaseContent.style.maxHeight = phaseContent.scrollHeight + 'px';
+                toggle.classList.add('active');
+                toggle.setAttribute('aria-expanded', 'true');
+            }
+        }
+        
+        toggle.addEventListener('click', handleToggle);
+        
+        toggle.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                handleToggle();
+            }
+        });
+    });
+})();

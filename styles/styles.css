@@ -52,6 +52,11 @@
 
 html, body { 
     height: 100%; 
+    overflow-x: hidden;
+}
+
+body:has(.contact-page) {
+    overflow-y: hidden;
 }
 
 body {
@@ -266,9 +271,10 @@ a { color: inherit; }
     font-weight: 900;
 }
 
-.about-subsection {
+.about-subsection:not(:last-child) {
     margin-top: 0;
     margin-bottom: 3rem;
+    border-bottom: 1px solid black;
 }
 
 .about-heading {
@@ -455,8 +461,10 @@ a { color: inherit; }
     display: grid;
     grid-template-columns: 60% 40%;
     grid-template-rows: 1fr;
-    min-height: calc(100vh - 60px);
+    height: calc(100vh - 60px);
+    max-height: calc(100vh - 60px);
     margin-top: 60px;
+    overflow: hidden;
 }
 
 .contact-notes {
@@ -464,6 +472,8 @@ a { color: inherit; }
     flex-direction: column;
     padding: 2rem;
     overflow-y: auto;
+    overflow-x: hidden;
+    max-height: 100%;
 }
 
 .contact-icons {
@@ -502,7 +512,7 @@ a { color: inherit; }
 
 .notes-title {
     font-family: "Aujournuit Condensed", ui-serif, Georgia, serif;
-    font-size: clamp(1.25rem, 1rem + 1vw, 1.5rem);
+    font-size: clamp(1.25rem, 1.5rem + 0.5vw, 3rem);
     font-weight: 400;
     text-decoration: underline;
     margin-bottom: 1rem;
@@ -563,7 +573,7 @@ a { color: inherit; }
     display: flex;
     align-items: center;
     justify-content: center;
-    height: calc(100vh - 60px);
+    height: 100%;
     border-left: 1px solid black;
 }
 
@@ -762,7 +772,8 @@ a { color: inherit; }
 }
 
 .project-subsection {
-    margin-bottom: 3rem;
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
     border-bottom: 1px solid black;
 }
 
@@ -772,6 +783,52 @@ a { color: inherit; }
     color: var(--black);
     margin-bottom: 1rem;
     font-weight: 900;
+    display: inline-block;
+}
+
+.project-heading-phase {
+    background-color: var(--blue);
+    padding: 0.5rem 1rem;
+    font-weight: 100;
+    border: 1px solid black;
+    color: var(--white);
+    margin-right: 0.5rem;
+}
+
+.phase-toggle {
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+    transition: 0.3s ease-in-out;
+}
+
+.phase-toggle:hover {
+    letter-spacing: 0.2rem;
+    transition: 0.3s ease-in-out;
+}
+
+.phase-indicator {
+    display: inline-block;
+    margin-left: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: 900;
+    transition: transform 0.3s ease;
+    color: var(--blue);
+}
+
+.phase-toggle.active .phase-indicator {
+    transform: rotate(90deg);
+}
+
+.phase-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out;
+}
+
+.phase-content.expanded {
+    max-height: 5000px;
+    transition: max-height 0.5s ease-in;
 }
 
 .project-subheading {
@@ -779,7 +836,7 @@ a { color: inherit; }
     font-family: "NectoMono", ui-monospace, "Courier New", monospace;
     color: var(--black);
     margin-bottom: 1rem;
-    margin-top: 2rem;
+    margin-top: 1rem;
     font-weight: 900;
 }
 
@@ -1258,7 +1315,7 @@ img {
 
     .contact-video video {
         width: 100%;
-        height: 100%;
+        height: 80%;
         object-fit: cover;
     }
     

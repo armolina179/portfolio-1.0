@@ -38,7 +38,7 @@
     </nav>
     <main class="project-page" role="main">
         <div class="project-hero">
-            <video class="project-video" src="../../../assets/works/tripplanner/gothfinal1.mp4" autoplay loop muted playsinline aria-label="Trip Planner project video"></video>
+            <video class="project-video" src="https://res.cloudinary.com/drms0y8jz/video/upload/v1767085277/gothfinal1_dzanbg.mp4" autoplay loop muted playsinline aria-label="Trip Planner project video"></video>
             <div class="project-image-container" style="display: none;">
                 <img class="project-image" src="" alt="">
                 <p class="image-expand-text">[Click to expand]</p>
@@ -59,29 +59,23 @@
 
                 <section class="project-subsection">
                     <h2 class="project-heading">Project Overview</h2>
-                    <p>This project is a single-page trip planner designed for a four-day visit to Gothenburg, Sweden. This tool was built to feel calm, quick, and useful during an actual city break; lean, functional, and grounded in a clear design system to reduce noise. The site pairs an itinerary using jQuery UI tabs with a content area, a lightbox photo gallery, an interactive Leaflet map, a weather widget pulling real-time data from Open-Meteo, and a set of "trip tools" that save to the browser via Web Storage. Each element supports the goal of reducing decision friction and presenting only what travelers need in the moment.</p>
+                    <p>This project is a single-page trip planner designed for a four-day visit to Gothenburg, Sweden. This tool was built to feel calm, quick, and useful during an actual city break; the key elements being "lean + functional". The site pairs an itinerary using jQuery UI tabs with a content area, a lightbox photo gallery, an interactive Leaflet map, a weather widget pulling real-time data from Open-Meteo, and a set of "trip tools" that save to the browser via Web Storage. Each element supports the goal of reducing decision friction and presenting only what travelers need in the moment.</p>
                 </section>
 
                 <section class="project-subsection">
-                    <h2 class="project-heading">Contextual Grounding</h2>
+                    <h2 class="project-heading phase-toggle">Contextual Grounding<span class="phase-indicator">&#129122;</span></h2>
+                    <div class="phase-content">
                     <p><strong>What the Project Is:</strong> The trip planner is a structured travel companion built as a demonstration of modern front-end fundamentals. It blends interactive components, API-driven data, persistent local features, and a minimalist interface to showcase the city's neighborhoods, tram lines, galleries, museums, and archipelago routes.</p>
                     <p><strong>Conceptual Foundation:</strong></p>
-                    <p>This project is rooted in the idea of designing for calm. Borrowing from UX minimalism, information clarity, and travel planning patterns that reduce cognitive load. Rather than overloading the page with text, the planner uses chips, icons, tabs, lightboxes, and short-form descriptions to keep information digestible.</p>
+                    <p>This project is rooted in the idea of designing for calm. Borrowing from UX minimalism, information clarity, and travel planning patterns that reduce cognitive load. </p>
                     <p><strong>Audience & Practice Demonstration:</strong></p>
-                    <p>The planner was built for visitors who want enough structure to move confidently but not so much that the experience becomes rigid. The site demonstrates:</p>
-                    <ul>
-                        <li>Modular front-end architecture</li>
-                        <li>Integration of APIs and plugins</li>
-                        <li>Interactive components designed for scannability</li>
-                        <li>Semantic accessibility</li>
-                        <li>Writing that prioritizes clarity</li>
-                    </ul>
-                    <p><strong>Approach Taken:</strong></p>
-                    <p>The design approach centered on a clear spatial layout: a 1280px container, sticky top navigation, monochrome palette, and typographic pairing of Archivo Black and Space Mono. The interface was shaped around decisive, quick interactions—tabs, cards, toggles, map markers, and saved lists.</p>
+                    <p>The planner was built for visitors who want enough structure to move confidently but not so much that the experience becomes rigid. </p>
+                    </div>
                 </section>
 
                 <section class="project-subsection">
-                    <h2 class="project-heading">Phase 1 — Research & Concept Development</h2>
+                    <h2 class="project-heading phase-toggle"><span class="project-heading-phase">Phase 1</span> Research & Concept Development<span class="phase-indicator">&#129122;</span></h2>
+                    <div class="phase-content">
                     <h3 class="project-subheading">Initial Research & Discovery</h3>
                     <ul>
                         <li>Mapped a realistic four-day arc through Gothenburg: Haga Nygata, Magasinsgatan, Korsvägen museums, an archipelago day from Saltholmen, and a wrap-up near Liseberg.</li>
@@ -108,10 +102,12 @@
                         <li>LocalStorage parsing for Trip Tools</li>
                         <li>Single-page scope (no backend)</li>
                     </ul>
+                    </div>
                 </section>
 
                 <section class="project-subsection">
-                    <h2 class="project-heading">Phase 2 — Planning & Design</h2>
+                    <h2 class="project-heading phase-toggle"><span class="project-heading-phase">Phase 2</span> Planning & Design<span class="phase-indicator">&#129122;</span></h2>
+                    <div class="phase-content">
                     <h3 class="project-subheading">Wireframes, Sitemaps & Layout Decisions</h3>
                     <ul class="strong-list">
                         <li class="hover-trigger" data-image="assets/tripplanner-wireframe.png"><strong><u>Wireframe Development:</u></strong> Using Figma, sketched a low-fidelity 1280px container with a sticky nav and left-tabs/right-content structure.</li>
@@ -141,10 +137,12 @@
                         <li><strong>LocalStorage:</strong> For persistent trip data</li>
                         <li><strong>Deferred scripts:</strong> To ensure plugin order and stable initialization</li>
                     </ul>
+                    </div>
                 </section>
 
                 <section class="project-subsection">
-                    <h2 class="project-heading">Phase 3 — Prototyping & Development</h2>
+                    <h2 class="project-heading phase-toggle"><span class="project-heading-phase">Phase 3</span> Prototyping & Development<span class="phase-indicator">&#129122;</span></h2>
+                    <div class="phase-content">
                     <h3 class="project-subheading">Code Implementation</h3>
                     <ul>
                         <li>Separated HTML/CSS/JS into external files for clarity and maintainability using VS Code.</li>
@@ -167,17 +165,19 @@
                     </ul>
                     <h3 class="project-subheading">Components Built & Media Created</h3>
                     <ul>
-                        <li>Hero banner & sticky navigation</li>
+                        <li class="hover-trigger" data-image="https://res.cloudinary.com/drms0y8jz/video/upload/v1767404590/goteborg_tdprocess_may2dw.gif">Hero video on TouchDesigner</li>
                         <li>Four-day itinerary (tabs + content)</li>
                         <li>Weather card layout</li>
                         <li>Photo gallery with responsive grid</li>
                         <li>Interactive map with custom pins</li>
                         <li>Trip Tools (Budget, Packing, Favorites)</li>
                     </ul>
+                    </div>
                 </section>
 
                 <section class="project-subsection">
-                    <h2 class="project-heading">Phase 4 — Testing, Iteration & Refinement</h2>
+                    <h2 class="project-heading phase-toggle"><span class="project-heading-phase">Phase 4</span> Testing, Iteration & Refinement<span class="phase-indicator">&#129122;</span></h2>
+                    <div class="phase-content">
                     <h3 class="project-subheading">User Testing & Feedback</h3>
                     <ul>
                         <li>Simplified the packing list interactions after early testers found the delete feature unclear</li>
@@ -187,7 +187,6 @@
                     <h3 class="project-subheading">Code Refactoring</h3>
                     <ul>
                         <li>Cleaned plugin initialization order for Magnific Popup</li>
-                        <li>Simplified weather-fetch logic to avoid preflight requests</li>
                         <li>Resolved a remove-item quirk by swapping to data-action="remove"</li>
                         <li>Conducted an accessibility pass with axe to refine button states and ARIA roles</li>
                     </ul>
@@ -197,10 +196,12 @@
                         <li>Improved gallery grid ratios for better cropping</li>
                         <li>Tuned border radii, shadows, and chip padding for consistency</li>
                     </ul>
+                    </div>
                 </section>
 
                 <section class="project-subsection">
-                    <h2 class="project-heading">Phase 5 — Final Output</h2>
+                    <h2 class="project-heading phase-toggle"><span class="project-heading-phase">Phase 5</span> Final Output<span class="phase-indicator">&#129122;</span></h2>
+                    <div class="phase-content">
                     <h3 class="project-subheading">Final Deliverable Details</h3>
                     <ul class="strong-list">
                         <li><strong>Format:</strong> Single-page interactive trip planner website</li>
@@ -217,38 +218,17 @@
                     </ul>
                     <h3 class="project-subheading">Product Delivered</h3>
                     <p>The final site feels fast, practical, and quiet, something I would genuinely open during a trip. It turns a large amount of travel fuzz into a set of small, decisive components that help visitors move confidently during travel.</p>
+                    </div>
                 </section>
 
                 <section class="project-subsection">
-                    <h2 class="project-heading">JavaScript → TypeScript Refactor</h2>
-                    <p>After completing the initial JavaScript version, I refactored core components into TypeScript to align with industry standards and strengthen my front-end development practice.</p>
-                    <h3 class="project-subheading">Why I Chose to Refactor</h3>
-                    <ul>
-                        <li>To introduce static typing for safer data structures</li>
-                        <li>To reduce runtime errors through compiler checks</li>
-                        <li>To practice managing types for APIs, plugin interfaces, and localStorage</li>
-                        <li>To deepen my understanding of TypeScript as a front-end superset language</li>
-                    </ul>
-                    <h3 class="project-subheading">What I Refactored</h3>
-                    <ul>
-                        <li>Weather fetching logic with typed API responses</li>
-                        <li>Trip Tools (Budget, Packing, Favorites) rewritten with defined interfaces</li>
-                        <li>Utility functions typed for clearer contracts</li>
-                        <li>Strongly typed map marker definitions for Leaflet</li>
-                        <li>Strict mode enabled with noImplicitAny</li>
-                    </ul>
-                    <h3 class="project-subheading">Outcome</h3>
-                    <p>The refactor significantly improved maintainability and helped me transition from beginner JavaScript to professional-grade TypeScript workflows. It reinforced structured thinking, stronger mental modeling of data, and confidence working with typed front-end code.</p>
-                </section>
-
-                <section class="project-subsection">
-                    <h2 class="project-heading">Reflection & Future Plans</h2>
+                    <h2 class="project-heading phase-toggle">Reflection & Future Plans<span class="phase-indicator">&#129122;</span></h2>
+                    <div class="phase-content">
                     <h3 class="project-subheading">What I Learned</h3>
                     <ul class="strong-list">
                         <li><strong>Web Fundamentals:</strong> Strengthened my grasp of web fundamentals (HTML/CSS/JS/jQuery)</li>
                         <li><strong>Plugin Integration:</strong> Gained confidence in handling plugins, API calls, and Web Storage</li>
                         <li><strong>UI Design:</strong> Developed intuition around layout, spacing, and scannability in UI</li>
-                        <li><strong>TypeScript:</strong> Learned to write safer, more maintainable code through TypeScript</li>
                     </ul>
                     <h3 class="project-subheading">Challenges & Breakthroughs</h3>
                     <p><strong>Challenges:</strong></p>
@@ -263,7 +243,6 @@
                         <li>Stable late-binding approach for the lightbox</li>
                         <li>Clear, chip-based navigation patterns</li>
                         <li>A resilient weather-fetch strategy</li>
-                        <li>A more professional codebase after TypeScript refactor</li>
                     </ul>
                     <h3 class="project-subheading">Future Plans</h3>
                     <p><strong>Features to Add or Extend:</strong></p>
@@ -273,11 +252,14 @@
                         <li>Develop dark mode + expand accessibility settings</li>
                         <li>Explore migrating the entire project to a framework like React or Svelte using TypeScript</li>
                     </ul>
+                    </div>
                 </section>
 
                 <section class="project-subsection">
-                    <h2 class="project-heading">Summary</h2>
+                    <h2 class="project-heading phase-toggle">Summary<span class="phase-indicator">&#129122;</span></h2>
+                    <div class="phase-content">
                     <p>The Gothenburg Trip Planner is a purposeful, well-structured single-page travel companion designed around clarity and ease of use. It blends maps, galleries, weather data, and persistent tools into a calm, functional layout and demonstrates my ability to build accessible, API-driven, modular front-end experiences. Refactoring the project into TypeScript further elevated the codebase and expanded my capabilities as a new front-end developer.</p>
+                    </div>
                 </section>
             </div>
         </section>
