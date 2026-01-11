@@ -1,0 +1,11 @@
+{
+  "redirects": [
+    { "source": "/works.html", "destination": "/works", "permanent": true },
+    { "source": "/about.html", "destination": "/about", "permanent": true },
+    { "source": "/contact.html", "destination": "/contact", "permanent": true },
+    { "source": "/assets/works/tripplanner/trip-planner.html", "destination": "/projects/tripplanner/", "permanent": true },
+    { "source": "/assets/works/digitalmetabolism/digital-metabolism.html", "destination": "/projects/digitalmetabolism/", "permanent": true },
+    { "source": "/assets/works/momentportal/momentportal.html", "destination": "/projects/momentportal/", "permanent": true },
+    { "source": "/assets/works/mcotw/mountain-communities.html", "destination": "/projects/mcotw/", "permanent": true }
+  ]
+}
