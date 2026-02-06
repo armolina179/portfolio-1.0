@@ -217,10 +217,6 @@ a { color: inherit; }
     width: 100%;
 }
 
-.home-arrow {
-    font-size: clamp(1rem + 0.2dvw, 2rem, 2rem);
-}
-
 /* About Content (shared on Home) */
 .about-section {
     display: flex;
