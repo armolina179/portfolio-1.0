@@ -381,6 +381,18 @@ if (cursor) {
     });
 })();
 
+// Realtime timestamp (home page)
+(function(){
+    const pad = n => String(n).padStart(2,'0');
+    document.addEventListener('DOMContentLoaded', () => {
+        if (typeof updateRealtimeTimestamp === 'function') updateRealtimeTimestamp();
+    });
+    const d = new Date();
+    const ts = '[' + pad(d.getHours()) + ':' + pad(d.getMinutes()) + ' @ ' + pad(d.getDate()) + '/' + pad(d.getMonth() + 1) + '/' + String(d.getFullYear()).slice(-2) +']';
+    const realtimeEl = document.getElementById('realtime-timestamp');
+    if (realtimeEl) realtimeEl.textContent = ts;
+})();
+
 // Phase Dropdown Toggle Functionality
 (function() {
     const phaseToggles = document.querySelectorAll('.phase-toggle');
