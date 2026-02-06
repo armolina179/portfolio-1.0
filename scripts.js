@@ -46,15 +46,6 @@ if (cursor) {
         });
     };
 
-    const marqueeEl = marqueeContent.closest('.marquee');
-    const pauseTween = () => gsap.to(marqueeContent, { timeScale: 0, duration: 0.2, overwrite: true });
-    const playTween = () => gsap.to(marqueeContent, { timeScale: 1, duration: 0.2, overwrite: true });
-
-    if (marqueeEl && window.matchMedia('(hover: hover)').matches) {
-        marqueeEl.addEventListener('mouseenter', pauseTween);
-        marqueeEl.addEventListener('mouseleave', playTween);
-    }
-
     // Initialize on page load
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', () => {
