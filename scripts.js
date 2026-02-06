@@ -15,16 +15,21 @@ if (cursor) {
     const marqueeContent = document.querySelector('.marquee__content');
     if (!marqueeContent) return;
 
-    // Get the width of one text element
-    const getTextWidth = () => {
-        const firstText = marqueeContent.querySelector('.marquee__text');
-        return firstText ? firstText.offsetWidth : 0;
+    // Ensure we have two copies of the content for a seamless loop
+    const ensureClone = () => {
+        if (marqueeContent.dataset.cloned === 'true') return;
+        const clone = marqueeContent.cloneNode(true);
+        clone.setAttribute('aria-hidden', 'true');
+        marqueeContent.appendChild(clone);
+        marqueeContent.dataset.cloned = 'true';
     };
 
     // Create infinite scroll animation
     const initMarquee = () => {
-        const textWidth = getTextWidth();
-        if (textWidth === 0) return;
+        ensureClone();
+        const totalWidth = marqueeContent.scrollWidth;
+        const singleWidth = totalWidth / 2;
+        if (singleWidth === 0) return;
 
         // Reset any existing animation
         gsap.killTweensOf(marqueeContent);
@@ -34,12 +39,21 @@ if (cursor) {
 
         // Create the animation - move by one text width for seamless loop
         gsap.to(marqueeContent, {
-            x: -textWidth,
-            duration: 15, // Adjust speed here (lower = faster)
+            x: -singleWidth,
+            duration: 50, // Adjust speed here (lower = faster)
             ease: 'none',
             repeat: -1, // Infinite repeat
         });
     };
+
+    const marqueeEl = marqueeContent.closest('.marquee');
+    const pauseTween = () => gsap.to(marqueeContent, { timeScale: 0, duration: 0.2, overwrite: true });
+    const playTween = () => gsap.to(marqueeContent, { timeScale: 1, duration: 0.2, overwrite: true });
+
+    if (marqueeEl && window.matchMedia('(hover: hover)').matches) {
+        marqueeEl.addEventListener('mouseenter', pauseTween);
+        marqueeEl.addEventListener('mouseleave', playTween);
+    }
 
     // Initialize on page load
     if (document.readyState === 'loading') {
