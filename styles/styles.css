@@ -1078,7 +1078,6 @@ img {
         object-fit: contain;
     }
 
-
     .phase-indicator {
         display: none;
     }
@@ -1089,6 +1088,11 @@ img {
         padding-top: 0;
         line-height: 5dvh;
     }
+
+    .project-heading-phase {
+        margin-right: 0;
+    }
+    
 
     .project-subsection {
         margin-bottom: 1rem;
