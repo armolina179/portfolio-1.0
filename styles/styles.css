@@ -146,7 +146,7 @@ a { color: inherit; }
     text-decoration: underline;
     text-underline-offset: 6px;
     font-family: "Frick0.3", ui-serif, Georgia, serif;
-    font-size: clamp(1.5rem, 1.2rem + 1.8vw, 2.5rem);
+    font-size: clamp(1rem, 1.2rem + 1.8vw, 2.5rem);
     display: block;
     text-align: left;
     transition: 0.5s ease-in-out;
@@ -217,6 +217,10 @@ a { color: inherit; }
     width: 100%;
 }
 
+.home-arrow {
+    font-size: clamp(1rem + 0.2dvw, 2rem, 2rem);
+}
+
 /* About Content (shared on Home) */
 .about-section {
     display: flex;
@@ -253,8 +257,10 @@ a { color: inherit; }
 
 .top-nav a {
     text-decoration: none;
-    font-family: "Frick0.3", ui-serif, Georgia, serif;
+    font-family: "FunnelDisplay", ui-serif, Georgia, serif;
     font-size: clamp(1.25rem, 1rem + 1.2vw, 2rem);
+    letter-spacing: -1px;
+    text-transform: uppercase;
     color: var(--black);
     transition: 0.3s ease-in-out;
 }
@@ -437,27 +443,6 @@ a { color: inherit; }
 
 .work-link:hover::after {
     transform: translateX(5px);
-}
-
-/* Hover preview sprite (100x100) */
-.hover-preview {
-    position: fixed;
-    width: 100px;
-    height: 100px;
-    pointer-events: none;
-    z-index: 9998;
-    outline: 1px solid var(--black);
-    outline-offset: -1px;
-    overflow: hidden;
-    display: none;
-    background: var(--white);
-}
-.hover-preview video,
-.hover-preview img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
 }
 
 /* Contact Page Styles */
@@ -1073,31 +1058,6 @@ img {
     }
 }
 
-/* Range: 721px - 1024px */
-@media (min-width: 721px) and (max-width: 1024px) {
-
-    .split__content {
-        grid-template-rows: 1fr 1fr;
-    }
-
-    .split {
-        display: grid;
-        grid-template-columns: 50% 50%;
-    }
-
-    .home-nav {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .marquee {
-        justify-content: center;
-        align-items: center;
-        height: 100%;
-    }
-}
-
 /* Max-width: 1024px */
 @media (max-width: 1024px) {
     .about-content a {
@@ -1168,12 +1128,16 @@ img {
         grid-template-rows: 0fr 1fr 5fr;
     }
 
+    .home-nav {
+        justify-content: space-around;
+    }
+
     .home-nav li {
         width: auto;
     }
 
     .home-nav a { 
-        font-size: 30px;
+        font-size: 5dvw;
         text-decoration: none;
         background-color: var(--blue);
         color: var(--white);
@@ -1208,8 +1172,6 @@ img {
     .home-nav ul {
         display: flex;
         flex-direction: row;
-        gap: 1rem;
-        justify-content: center;
         transform: none;
         flex-wrap: wrap;
     }
