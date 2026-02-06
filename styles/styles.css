@@ -1,20 +1,20 @@
 @font-face {
-    font-family: "Aujournuit Condensed";
-    src: url("../fonts/Aujournuit-Condensed.woff2") format("woff2");
+    font-family: "Frick0.3";
+    src: url("../fonts/Frick0.3-Regular.woff2") format("woff2");
     font-style: normal;
     font-display: swap;
 }
 
 @font-face {
-    font-family: "Aujournuit Condensed";
-    src: url("../fonts/Aujournuit-Condensed.woff2") format("woff2");
+    font-family: "Frick0.3";
+    src: url("../fonts/Frick0.3-Regular.woff2") format("woff2");
     font-style: italic;
     font-display: swap;
 }
 
 @font-face {
-    font-family: "NectoMono";
-    src: url("../fonts/NectoMono-Regular.woff2") format("woff2");
+    font-family: "FunnelDisplay";
+    src: url("../fonts/FunnelDisplay-Regular.woff2") format("woff2");
     font-style: normal;
     font-display: swap;
 }
@@ -70,46 +70,63 @@ body {
 a { color: inherit; }
 
 /* Home Page Styles */
-.home { min-height: 100vh; }
+.home {
+    min-height: 100vh;
+    height: 100vh;
+    overflow: hidden;
+}
 
 .split {
     display: grid;
-    grid-template-columns: 30% 70%;
-    grid-template-rows: 1fr 3fr;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 1fr;
     min-height: 100vh;
 }
 
 .split__media { 
-    position: relative; 
+    position: sticky; 
+    top: 0;
     border-right: 1px solid black;
     grid-row: 1 / -1;
     display: flex;
     align-items: center;
     justify-content: center;
+    height: 100vh;
 }
 
 .titlecard {
     position: absolute;
-    width: 100%;
-    height: 100%;
+    width: 60%;
+    height: 60%;
     display: block;
-    object-fit: fill;
+    object-fit: contain;
+    object-position: center;
 }
 
 .split__content {
     grid-column: 2;
     grid-row: 1 / -1;
     display: grid;
-    grid-template-rows: 1fr 6fr;
+    grid-template-rows: auto 1fr;
     padding: 0;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+.home-body {
+    position: relative;
+    grid-row: 2;
+    width: 100%;
+    padding: 2.5rem 3rem 4rem;
+    display: grid;
+    grid-template-rows: auto auto;
+    gap: 2rem;
 }
 
 .home-nav {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    grid-row: 2;
-    padding: 2rem;
+    align-items: flex-start;
+    justify-content: flex-start;
 }
 
 .home-nav ul {
@@ -117,7 +134,8 @@ a { color: inherit; }
     padding: 0;
     margin: 0;
     display: grid;
-    gap: 5rem;
+    gap: 1.5rem;
+    justify-items: start;
 }
 
 .home-nav li {
@@ -127,11 +145,10 @@ a { color: inherit; }
 .home-nav a {
     text-decoration: underline;
     text-underline-offset: 6px;
-    font-family: "Aujournuit Condensed", ui-serif, Georgia, serif;
-    font-size: 40px;
+    font-family: "Frick0.3", ui-serif, Georgia, serif;
+    font-size: clamp(1.5rem, 1.2rem + 1.8vw, 2.5rem);
     display: block;
-    width: 100%;
-    text-align: center;
+    text-align: left;
     transition: 0.5s ease-in-out;
 }
 
@@ -159,15 +176,17 @@ a { color: inherit; }
     align-items: center;
     justify-content: center;
     display: flex;
+    min-height: clamp(90px, 12vh, 160px);
+    border-bottom: 1px solid black;
 }
 
 .marquee {
     width: 100%;
-    height: 70%;
+    height: 100%;
     display: flex;
-    border-bottom: 1px solid black;
     overflow: hidden;
     position: relative;
+    align-items: center;
 }
 
 .marquee__content {
@@ -179,19 +198,45 @@ a { color: inherit; }
 .marquee__text {
     display: inline-block;
     padding: 0 1rem;
-    font-family: "Aujournuit Condensed", ui-serif, Georgia, serif;
+    font-family: "FunnelDisplay", ui-serif, Georgia, serif;
     font-size: clamp(1.5rem, 2rem + 2vw, 3rem);
     color: var(--black);
     white-space: nowrap;
 }
 
-/* About Page Styles */
+.home .about-section {
+    align-items: flex-start;
+    justify-content: stretch;
+    width: 100%;
+    padding-top: 0;
+}
+
+.home .about-content {
+    max-width: none;
+    margin-top: 0;
+    width: 100%;
+}
+
+/* About Content (shared on Home) */
+.about-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-content {
+    max-width: 600px;
+    width: 100%;
+}
+
+/* Top Navigation (Works/Contact) */
 .top-nav {
     width: 100%;
     border-bottom: 1px solid var(--black);
     padding: 1rem 0;
     position: fixed;
     top: 0;
+    left: 0;
     background-color: var(--white);
     z-index: 1000;
 }
@@ -208,64 +253,25 @@ a { color: inherit; }
 
 .top-nav a {
     text-decoration: none;
-    font-family: "Aujournuit Condensed", ui-serif, Georgia, serif;
+    font-family: "Frick0.3", ui-serif, Georgia, serif;
     font-size: clamp(1.25rem, 1rem + 1.2vw, 2rem);
     color: var(--black);
     transition: 0.3s ease-in-out;
 }
 
 .top-nav a:hover {
-    font-family: "Aujournuit Condensed", ui-serif, Georgia, serif;
     font-style: italic;
     color: var(--blue);
     text-decoration: underline;
-    transition: 0.3s ease-in-out;
 }
 
 .top-nav a.current {
-    font-family: "Aujournuit Condensed", ui-serif, Georgia, serif;
     font-style: italic;
     color: var(--blue);
 }
 
-.about-page {
-    display: grid;
-    margin: 2rem 10%;
-    grid-template-columns: 40% 60%;
-    min-height: calc(100vh - 60px);
-}
-
-.about-hero {
-    position: sticky;
-    top: 0;
-    height: 100vh;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.hero-video {
-    width: 80%;
-    height: 80%;
-    object-fit: contain;
-    display: block;
-}
-
-.about-section {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.about-content {
-    max-width: 600px;
-    width: 100%;
-    margin-top: 5rem;
-}
-
 .about-title {
-    font-family: "Aujournuit Condensed", ui-serif, Georgia, serif;
+    font-family: "Frick0.3", ui-serif, Georgia, serif;
     font-size: clamp(2rem, 2rem + 2vw, 3rem);
     color: var(--black);
     font-weight: 900;
@@ -278,7 +284,7 @@ a { color: inherit; }
 }
 
 .about-heading {
-    font-family: "Aujournuit Condensed", ui-serif, Georgia, serif;
+    font-family: "Frick0.3", ui-serif, Georgia, serif;
     font-size: clamp(1.5rem, 1.25rem + 1vw, 2rem);
     color: var(--black);
     font-weight: 900;
@@ -290,7 +296,7 @@ a { color: inherit; }
     line-height: 1.4;
     letter-spacing: -1px;
     font-size: clamp(1rem, 0.9rem + 0.5vw, 1.125rem);
-    font-family: "NectoMono", ui-monospace, "Courier New", monospace;
+    font-family: "FunnelDisplay", ui-monospace, "Courier New", monospace;
 }
 
 .about-content a {
@@ -298,13 +304,13 @@ a { color: inherit; }
     letter-spacing: 2px;
     font-weight: 900;
     transition: 0.5s ease;
-    font-family: "Aujournuit Condensed", ui-serif, Georgia, serif;
+    font-family: "Frick0.3", ui-serif, Georgia, serif;
     text-decoration: none;
 }
 
 .about-content a:hover {
     letter-spacing: 3px;
-    font-family: "Aujournuit Condensed", ui-serif, Georgia, serif;
+    font-family: "Frick0.3", ui-serif, Georgia, serif;
     font-style: italic;
     text-decoration: underline;
 }
@@ -368,7 +374,7 @@ a { color: inherit; }
 }
 
 .work-heading {
-    font-family: "Aujournuit Condensed", ui-serif, Georgia, serif;
+    font-family: "Frick0.3", ui-serif, Georgia, serif;
     font-size: clamp(1.5rem, 1.25rem + 1vw, 2rem);
     color: var(--black);
     margin: 0 0 0.5rem 0;
@@ -377,13 +383,14 @@ a { color: inherit; }
 }
 
 .work-role {
-    font-family: "NectoMono", ui-monospace, "Courier New", monospace;
+    font-family: "FunnelDisplay", ui-monospace, "Courier New", monospace;
     font-size: clamp(0.875rem, 0.8rem + 0.3vw, 1rem);
     color: var(--black);
     margin: 0 0 0.5rem 0;
+    padding-bottom: 2px;
     text-align: center;
     background-color: yellow;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
     border: 1px solid black;
 }
 
@@ -393,16 +400,16 @@ a { color: inherit; }
 }
 
 .work-brief {
-    font-family: "NectoMono", ui-monospace, "Courier New", monospace;
-    font-size: clamp(0.875rem, 0.5rem + 0.3vw, 1rem);
-    line-height: 1.5;
+    font-family: "FunnelDisplay", ui-monospace, "Courier New", monospace;
+    font-size: clamp(0.875rem, 1rem + 0.3vw, 1rem);
+    line-height: 1.2;
     color: var(--black);
     margin: 0 0 1.5rem 0;
 }
 
 .work-link {
     position: relative;
-    font-family: "Aujournuit Condensed", ui-serif, Georgia, serif;
+    font-family: "Frick0.3", ui-serif, Georgia, serif;
     font-size: clamp(1rem, 0.9rem + 0.5vw, 1.125rem);
     color: var(--white);
     background-color: var(--blue);
@@ -512,7 +519,7 @@ a { color: inherit; }
 }
 
 .notes-title {
-    font-family: "Aujournuit Condensed", ui-serif, Georgia, serif;
+    font-family: "Frick0.3", ui-serif, Georgia, serif;
     font-size: clamp(1.25rem, 1.5rem + 0.5vw, 3rem);
     font-weight: 400;
     text-decoration: underline;
@@ -532,7 +539,7 @@ a { color: inherit; }
     justify-content: space-between;
     align-items: center;
     color: var(--black);
-    font-family: "Aujournuit Condensed", ui-serif, Georgia, serif;
+    font-family: "Frick0.3", ui-serif, Georgia, serif;
     font-size: clamp(1.25rem, 1rem + 1vw, 1.5rem);
     font-weight: 400;
     text-align: left;
@@ -563,7 +570,7 @@ a { color: inherit; }
     padding: 1.5rem;
     margin: 0;
     color: var(--black);
-    font-family: "NectoMono", ui-monospace, "Courier New", monospace;
+    font-family: "FunnelDisplay", ui-monospace, "Courier New", monospace;
     font-size: clamp(0.875rem, 0.8rem + 0.3vw, 1rem);
 }
 
@@ -631,7 +638,7 @@ a { color: inherit; }
 }
 
 .image-expand-text {
-    font-family: "NectoMono", ui-monospace, "Courier New", monospace;
+    font-family: "FunnelDisplay", ui-monospace, "Courier New", monospace;
     font-size: 0.875rem;
     color: var(--black);
     margin: 0;
@@ -732,7 +739,7 @@ a { color: inherit; }
 }
 
 .project-title {
-    font-family: "Aujournuit Condensed", ui-serif, Georgia, serif;
+    font-family: "Frick0.3", ui-serif, Georgia, serif;
     font-size: clamp(2rem, 2rem + 2vw, 3rem);
     color: var(--black);
     margin-top: 2rem;
@@ -741,7 +748,7 @@ a { color: inherit; }
 }
 
 .project-meta {
-    font-family: "NectoMono", ui-monospace, "Courier New", monospace;
+    font-family: "FunnelDisplay", ui-monospace, "Courier New", monospace;
     font-size: clamp(0.875rem, 0.8rem + 0.3vw, 1rem);
     color: var(--black);
     margin-bottom: 2rem;
@@ -749,7 +756,7 @@ a { color: inherit; }
 }
 
 .project-meta .work-link {
-    font-family: "Aujournuit Condensed", ui-serif, Georgia, serif;
+    font-family: "Frick0.3", ui-serif, Georgia, serif;
     font-size: clamp(1rem, 0.9rem + 0.5vw, 1.125rem);
     color: var(--white);
     background-color: var(--blue);
@@ -777,11 +784,11 @@ a { color: inherit; }
 }
 
 .project-heading {
-    font-family: "Aujournuit Condensed", ui-serif, Georgia, serif;
+    font-family: "Frick0.3", ui-serif, Georgia, serif;
     font-size: clamp(1.5rem, 1.25rem + 1vw, 2rem);
     color: var(--black);
     margin-bottom: 1rem;
-    font-weight: 900;
+    line-height: 1.4;
     display: inline-block;
 }
 
@@ -832,7 +839,7 @@ a { color: inherit; }
 
 .project-subheading {
     font-size: clamp(1rem, 0.9rem + 0.5vw, 1.125rem);
-    font-family: "NectoMono", ui-monospace, "Courier New", monospace;
+    font-family: "FunnelDisplay", ui-monospace, "Courier New", monospace;
     color: var(--black);
     margin-bottom: 1rem;
     margin-top: 1rem;
@@ -859,7 +866,7 @@ a { color: inherit; }
     padding: 0.5rem 0.75rem;
     border-radius: 4px;
     font-size: 0.75rem;
-    font-family: "NectoMono", ui-monospace, "Courier New", monospace;
+    font-family: "FunnelDisplay", ui-monospace, "Courier New", monospace;
     white-space: nowrap;
     pointer-events: none;
     z-index: 10000;
@@ -896,7 +903,7 @@ a { color: inherit; }
     line-height: 1.6;
     letter-spacing: -0.5px;
     font-size: clamp(1rem, 0.9rem + 0.5vw, 1.125rem);
-    font-family: "NectoMono", ui-monospace, "Courier New", monospace;
+    font-family: "FunnelDisplay", ui-monospace, "Courier New", monospace;
 }
 
 .project-content ul {
@@ -908,7 +915,7 @@ a { color: inherit; }
     margin-bottom: 0.75rem;
     line-height: 1.2;
     font-size: clamp(1rem, 0.9rem + 0.5vw, 1.125rem);
-    font-family: "NectoMono", ui-monospace, "Courier New", monospace;
+    font-family: "FunnelDisplay", ui-monospace, "Courier New", monospace;
     list-style: "> ";
 }
 
@@ -917,13 +924,13 @@ a { color: inherit; }
     letter-spacing: 1px;
     font-weight: 600;
     transition: 0.5s ease;
-    font-family: "Aujournuit Condensed", ui-serif, Georgia, serif;
+    font-family: "Frick0.3", ui-serif, Georgia, serif;
     text-decoration: none;
 }
 
 .project-content a:hover {
     letter-spacing: 2px;
-    font-family: "Aujournuit Condensed", ui-serif, Georgia, serif;
+    font-family: "Frick0.3", ui-serif, Georgia, serif;
     font-style: italic;
     text-decoration: underline;
 }
@@ -945,10 +952,6 @@ a { color: inherit; }
     color: var(--blue);
     font-weight: 900;
     margin-right: 0.5rem;
-}
-
-video:not(.hero-video) {
-    background-color: yellow;
 }
 
 img {
@@ -973,12 +976,6 @@ img {
     .home-nav a:hover {
         color: inherit;
         letter-spacing: inherit;
-    }
-
-    .top-nav a:hover {
-        font-family: inherit;
-        color: inherit;
-        text-decoration: inherit;
     }
 
     .about-content a:hover {
@@ -1078,21 +1075,14 @@ img {
 
 /* Range: 721px - 1024px */
 @media (min-width: 721px) and (max-width: 1024px) {
-    .split__media {
-        grid-row: 1 / -1;
-    }
 
     .split__content {
-        grid-template-rows: 1fr 8fr;
+        grid-template-rows: 1fr 1fr;
     }
 
     .split {
         display: grid;
         grid-template-columns: 50% 50%;
-    }
-
-    .titlecard {
-        object-fit: fill;
     }
 
     .home-nav {
@@ -1104,8 +1094,7 @@ img {
     .marquee {
         justify-content: center;
         align-items: center;
-        border-bottom: 1px solid black;
-        height: 90%;
+        height: 100%;
     }
 }
 
@@ -1169,18 +1158,18 @@ img {
 /* Max-width: 720px */
 @media (max-width: 720px) {
     /* Home Page */
+    .home {
+        height: auto;
+        overflow: visible;
+    }
+
     .split { 
         grid-template-columns: 1fr;
-        grid-template-rows: 4fr 1fr 5fr;
-    }
-    
-    .split__media { 
-        width: 100%;
-        grid-row: 1;
+        grid-template-rows: 0fr 1fr 5fr;
     }
 
     .home-nav li {
-        width: 100%;
+        width: auto;
     }
 
     .home-nav a { 
@@ -1188,9 +1177,9 @@ img {
         text-decoration: none;
         background-color: var(--blue);
         color: var(--white);
-        padding: 10px;
+        padding: 10px 16px;
         display: block;
-        width: 100%;
+        width: auto;
         text-align: center;
         border: 1px solid black;
     }
@@ -1198,11 +1187,14 @@ img {
     .home-nav a:hover {
         color: var(--white);
         text-decoration: underline;
+        letter-spacing: normal;
     }
 
     .split__content {
         grid-column: 1;
         grid-row: 2 / -1;
+        height: auto;
+        overflow: visible;
     }
     
     .split__marquee {
@@ -1215,10 +1207,11 @@ img {
     
     .home-nav ul {
         display: flex;
-        flex-direction: column;
-        gap: 2rem;
+        flex-direction: row;
+        gap: 1rem;
         justify-content: center;
-        transform: translateY(-8%);
+        transform: none;
+        flex-wrap: wrap;
     }
     
     .titlecard { 
@@ -1244,20 +1237,6 @@ img {
 
     .top-nav ul {
         gap: 1rem;
-    }
-
-    /* About Page */
-    .about-page {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto 1fr;
-        margin-top: 5vh;
-    }
-
-    .about-hero {
-        margin-top: 2rem;
-        height: 40vh;
-        border: none;
-        position: relative;
     }
 
     .about-section {
