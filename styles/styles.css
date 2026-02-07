@@ -372,13 +372,13 @@ a { color: inherit; }
     margin: 0 0 0.5rem 0;
     padding-bottom: 2px;
     text-align: center;
-    background-color: yellow;
+    background-color: var(--yellow);
     letter-spacing: 2px;
-    border: 1px solid black;
+    border: 1px solid var(--black);
 }
 
 .work-role::selection {
-    background-color: blue;
+    background-color: var(--blue);
     color: white;
 }
 
@@ -401,11 +401,11 @@ a { color: inherit; }
     display: inline-block;
     width: fit-content;
     transition: background-color 0.3s ease, color 0.3s ease;
-    border: 1px solid black;
+    border: 1px solid var(--black);
 }
 
 .work-link:hover {
-    background-color: yellow;
+    background-color: var(--yellow);
     color: var(--black);
     font-weight: 600;
 }
@@ -536,13 +536,13 @@ a { color: inherit; }
 }
 
 .contact-video {
-    background-color: yellow;
+    background-color: var(--yellow);
     position: relative;
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-left: 1px solid black;
+    border-left: 1px solid var(--black);
 }
 
 .contact-video video {
@@ -576,7 +576,7 @@ a { color: inherit; }
     aspect-ratio: 1 / 1;
     object-fit: cover;
     display: block;
-    border: 1px solid black;
+    border: 1px solid var(--black);
 }
 
 .project-image-container {
@@ -595,7 +595,7 @@ a { color: inherit; }
     max-height: calc(100% - 2rem);
     object-fit: contain;
     display: block;
-    border: 1px solid black;
+    border: 1px solid var(--black);
 }
 
 .image-expand-text {
@@ -681,7 +681,7 @@ a { color: inherit; }
 }
 
 .lightbox-close:focus {
-    outline: 2px solid white;
+    outline: 2px solid var(--white);
     outline-offset: 2px;
 }
 
@@ -741,7 +741,7 @@ a { color: inherit; }
 .project-subsection {
     padding-bottom: 1rem;
     margin-bottom: 2rem;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid var(--black);
 }
 
 .project-heading {
@@ -756,7 +756,7 @@ a { color: inherit; }
 .project-heading-phase {
     background-color: var(--blue);
     padding: 0.5rem 1rem;
-    border: 1px solid black;
+    border: 1px solid var(--black);
     color: var(--white);
     margin-right: 0.5rem;
 }
@@ -912,7 +912,7 @@ a { color: inherit; }
 }
 
 img {
-    background-color: yellow;
+    background-color: var(--yellow);
 }
 
 .contact-icons img {
@@ -922,6 +922,30 @@ img {
 #realtime-timestamp {
     color: var(--blue);
     font-weight: bold;
+}
+
+#realtime-timestamp::after {
+    content: "_";
+    display: inline-block;
+    margin-left: 0.2rem;
+    animation: realtime-cursor-blink 1s steps(2, start) infinite;
+}
+
+@keyframes realtime-cursor-blink {
+    0%,
+    49% {
+        opacity: 1;
+    }
+    50%,
+    100% {
+        opacity: 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #realtime-timestamp::after {
+        animation: none;
+    }
 }
 
 /* ========================================
@@ -957,7 +981,7 @@ img {
     }
 
     .work-video {
-        border: 1px solid black;
+        border: 1px solid var(--black);
     }
 
     .contact-icons a:hover {
@@ -1027,7 +1051,7 @@ img {
         grid-template-columns: 1fr 1fr;
         margin: 0 2rem;
         padding-block: 2rem;
-        border-bottom: 1px solid black;
+        border-bottom: 1px solid var(--black);
     }
 
     .work-item:not(:nth-child(even)) {
@@ -1095,7 +1119,7 @@ img {
 
     .project-subsection {
         margin-bottom: 1rem;
-        border-bottom: 1px solid black;
+        border-bottom: 1px solid var(--black);
     }
 
     .home-body{
@@ -1137,7 +1161,7 @@ img {
         display: block;
         width: auto;
         text-align: center;
-        border: 1px solid black;
+        border: 1px solid var(--black);
     }
 
     .home-nav a:hover {
@@ -1157,7 +1181,7 @@ img {
         align-items: center;
         justify-content: center;
         grid-row: 1;
-        border-top: 1px solid black;
+        border-top: 1px solid var(--black);
         height: 100%;
     }
     
@@ -1201,7 +1225,7 @@ img {
     .work-item {
         grid-template-columns: 1fr;
         grid-template-rows: auto 1fr;
-        border-top: 1px solid black;
+        border-top: 1px solid var(--black);
         padding-block: 2rem;
     }
 
