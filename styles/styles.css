@@ -155,14 +155,13 @@ a { color: inherit; }
 
 .home-nav a {
     text-decoration: none;
-    text-underline-offset: 6px;
     font-family: "Frick0.3", ui-serif, Georgia, serif;
     font-size: clamp(1rem, 1.2rem + 1.8vw, 2.5rem);
     display: block;
     text-align: left;
     white-space: nowrap;
     transition: 0.5s ease-in-out;
-    padding: 0 0.8rem;
+    padding: 0.2rem 0.8rem 0;
     color: var(--white);
     background-color: var(--blue);
     border: 1px solid var(--black);
@@ -751,7 +750,7 @@ a { color: inherit; }
     color: var(--white);
     background-color: var(--blue);
     margin-top: 0.8rem;
-    padding: 0.5rem 1rem;
+    padding: 0.8rem 1rem 0.5rem;
 }
   
 .project-meta .work-link:hover,
@@ -775,16 +774,15 @@ a { color: inherit; }
 
 .project-heading {
     font-family: "Frick0.3", ui-serif, Georgia, serif;
-    font-size: clamp(1.5rem, 1.25rem + 1vw, 2rem);
+    font-size: clamp(0.75rem, 1.8rem, 2rem);
     color: var(--black);
-    margin-bottom: 1rem;
     line-height: 1.4;
     display: inline-block;
 }
 
 .project-heading-phase {
     background-color: var(--blue);
-    padding: 0.5rem 1rem;
+    padding: 1rem 1rem 0.5rem;
     border: 1px solid var(--black);
     color: var(--white);
     margin-right: 0.5rem;
@@ -917,7 +915,6 @@ a { color: inherit; }
 .project-content a:hover {
     letter-spacing: 2px;
     font-family: "Frick0.3", ui-serif, Georgia, serif;
-    font-style: italic;
     text-decoration: underline;
 }
 
