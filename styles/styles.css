@@ -199,7 +199,7 @@ a { color: inherit; }
     font-family: "FunnelDisplay", ui-serif, Georgia, serif;
     font-size: clamp(1.5rem, 2rem + 2vw, 3rem);
     color: var(--white);
-    -webkit-text-stroke: 2px black;
+    -webkit-text-stroke: 0.2rem black;
     paint-order: stroke fill;
     white-space: nowrap;
 }
@@ -448,10 +448,9 @@ a { color: inherit; }
 
 .contact-icons {
     display: flex;
+    margin-top: 2rem;
     margin-bottom: 1rem;
-    margin-top: 1rem;
     flex-wrap: wrap;
-    padding: 1rem;
     justify-content: space-around;
 }
 
