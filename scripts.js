@@ -393,7 +393,7 @@ if (cursor) {
         if (typeof updateRealtimeTimestamp === 'function') updateRealtimeTimestamp();
     });
     const d = new Date();
-    const ts = pad(d.getHours()) + ':' + pad(d.getMinutes()) + ' @ ' + pad(d.getDate()) + '/' + pad(d.getMonth() + 1) + '/' + String(d.getFullYear()).slice(-2);
+    const ts = pad(pad(d.getDate()) + '/' + pad(d.getMonth() + 1) + '/' + String(d.getFullYear()).slice(-2) + ' @ ' + pad(d.getHours()) + ':' + pad(d.getMinutes()));
     const realtimeEl = document.getElementById('realtime-timestamp');
     if (realtimeEl) realtimeEl.textContent = ts;
 })();
