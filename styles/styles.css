@@ -181,7 +181,9 @@ img {
     text-align: center;
     white-space: nowrap;
     transition: 0.5s ease-in-out;
-    padding: 0.4rem 0.9rem;
+    padding: 0.4em;
+    padding-bottom: 0.2em;
+    height: auto;
     color: var(--white);
     background-color: var(--blue);
     border: 1px solid var(--black);
@@ -468,6 +470,12 @@ img {
     line-height: 1.2;
     color: var(--black);
     margin: 0 0 1.5rem 0;
+    text-decoration: none;
+}
+
+.work-brief,
+.work-brief * {
+    text-decoration: none;
 }
 
 .work-link {
@@ -838,7 +846,8 @@ img {
 
 .project-heading-phase {
     background-color: var(--blue);
-    padding: 0 1rem;
+    padding: 1rem;
+    padding-bottom: 0.5rem;
     border: 1px solid var(--black);
     color: var(--white);
     margin-right: 0.5rem;
