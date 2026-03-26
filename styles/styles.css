@@ -1176,6 +1176,13 @@ img {
 
     .project-heading-phase {
         margin-right: 0;
+        padding: 0;
+        border: none;
+        color: var(--blue);
+        background-color: var(--white);
+    }
+    .project-heading-phase::after {
+        content: ' →';
     }
     
 
