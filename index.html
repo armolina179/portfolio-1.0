@@ -4,70 +4,354 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ariel Molina — Design & Creative Strategy</title>
-    <link rel="preload" href="fonts/InstrumentSerif-Regular.ttf" as="font" type="font/ttf" crossorigin>
     <link rel="preload" href="fonts/FunnelDisplay-Regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/Frick0.3-Regular.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="styles/styles.css">
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-    <script defer src="scripts.js?v=2"></script>
-    <link rel="icon" href="assets/favicon.png" type="favicon/img">
+    <script defer src="scripts.js"></script>
+    <link rel="icon" href="assets/favicon.png" type="image/png">
 </head>
 <body>
-    <div class="custom-cursor"></div>
-    <main class="home" role="main">
-        <section class="split" aria-label="Home">
-            <div class="split__media">
-            <video class="titlecard" src="https://res.cloudinary.com/drms0y8jz/video/upload/v1770356822/loop-v2_mjtyue.mp4" autoplay loop muted playsinline aria-label="Hero video"></video>
+
+    <div class="dashboard">
+
+        <!-- ── Sidebar ─────────────────────────────── -->
+        <aside class="sidebar" aria-label="Site navigation">
+
+            <div class="sidebar__header">
+                <button class="sidebar__user" id="sidebar-user-btn" aria-expanded="false" aria-controls="sidebar-dropdown">
+                    Ariel Molina
+                    <svg class="sidebar__chevron" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+                </button>
+                <div class="sidebar__header-actions">
+                    <button class="sidebar__theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+                        <svg class="icon-sun" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+                        <svg class="icon-moon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                    </button>
+                </div>
             </div>
-            <div class="split__content">
-                <div class="split__marquee">
-                    <div class="marquee" aria-label="Marquee: Creative Development, Media Strategist, Digital Worldbuilder">
-                        <div class="marquee__content">
-                            <span class="marquee__text">Creative Developer // Media Strategist // Digital Worldbuilder</span>
-                            <span class="marquee__text">→ → →</span>
-                            <span class="marquee__text"> Creative Developer // Media Strategist // Digital Worldbuilder</span>
-                            <span class="marquee__text">→ → →</span>
-                            <span class="marquee__text"> Creative Developer // Media Strategist // Digital Worldbuilder</span>
-                            <span class="marquee__text">→ → →</span>
-                        </div>
+
+            <!-- Bio dropdown -->
+            <div class="sidebar__dropdown" id="sidebar-dropdown" hidden>
+                <p class="sidebar__bio">Hello, I'm Ariel — a web designer and developer based in Seattle, WA. I help build digital experiences driven by community, care, and resilience.</p>
+            </div>
+
+            <nav class="sidebar__nav" aria-label="Project filters">
+                <ul>
+                    <li>
+                        <button class="sidebar__nav-item active" data-filter-status="all">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+                            All projects
+                            <span class="sidebar__badge" id="badge-all"></span>
+                        </button>
+                    </li>
+                    <li>
+                        <button class="sidebar__nav-item" data-filter-status="in-progress">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg>
+                            In Progress
+                            <span class="sidebar__badge" id="badge-inprogress"></span>
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="sidebar__section-label">Filters</div>
+
+            <nav class="sidebar__filters" aria-label="Tag filters">
+                <ul>
+                    <li>
+                        <button class="sidebar__filter-item" data-filter-tag="web-design">
+                            <svg width="9" height="9" viewBox="0 0 10 10" aria-hidden="true"><circle cx="5" cy="5" r="5" fill="#0020FF"/></svg>
+                            Web Design
+                            <span class="sidebar__badge" id="badge-webdesign"></span>
+                        </button>
+                    </li>
+                    <li>
+                        <button class="sidebar__filter-item" data-filter-tag="media-strategy">
+                            <svg width="9" height="9" viewBox="0 0 10 10" aria-hidden="true"><circle cx="5" cy="5" r="5" fill="#E85D04"/></svg>
+                            Media Strategy
+                            <span class="sidebar__badge" id="badge-mediastrategy"></span>
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="sidebar__spacer"></div>
+
+            <div class="sidebar__video-wrap" aria-hidden="true">
+                <video src="assets/circle%20path2.mp4" autoplay loop muted playsinline></video>
+            </div>
+
+        </aside>
+
+        <!-- ── Main ────────────────────────────────── -->
+        <div class="main">
+
+            <!-- Topbar -->
+            <header class="topbar">
+                <div class="topbar__search">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                    <input type="search" class="topbar__search-input" id="search-input" placeholder="Search" aria-label="Search projects">
+                </div>
+                <div class="topbar__actions">
+                    <button class="topbar__btn topbar__btn--ask" id="ask-btn">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/></svg>
+                        Ask
+                    </button>
+                    <button class="topbar__btn topbar__btn--add" id="add-btn" hidden aria-hidden="true">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                        Add
+                    </button>
+                </div>
+            </header>
+
+            <!-- Content -->
+            <div class="content">
+                <div class="content__header">
+                    <div class="content__breadcrumb">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+                        <span id="content-title">All Projects</span>
                     </div>
                 </div>
-                <div class="home-body">
-                    <section class="about-section" aria-label="About">
-                        <div class="about-content">
-                            <section class="about-subsection">
-                                <p>Hello, I'm Ariel. I'm a web designer and developer based in &#128205; <span class="location-tag">Seattle, WA</span><br>I help build digital experiences driven by community, care, and resilience. Let's connect! </p>
-                                <p class="contact-info">
-                                    <a href="mailto:hi@arielmolina.work">→hi@arielmolina.work</a>
-                                    <a href="http://github.com/armolina179">→GitHub</a>
-                                    <a href="http://linkedin.com/in/ariel-molina-330292248">→LinkedIn</a>
-                                    <a href="http://instagram.com/warmcomet">→Instagram</a>
-                                    
-                                    
-                                </p>
 
-                                <p><strong>Skills:</strong> <br> 
-                                    UX/UI Design / User Research / Brand Strategy /
-                                  Interaction Design</p>
-                                  
-                                <p><strong>Tools:</strong><br> Webflow / React / Figma / Adobe Creative Suite / Spline / Cavalry</p>
+                <!-- Column headers -->
+                <div class="project-list-header" aria-hidden="true">
+                    <span class="plh__name">Name</span>
+                    <span class="plh__type">Type</span>
+                    <span class="plh__date">Updated</span>
+                </div>
 
-                            </section>
-                            <section class="about-subsection">
-                                <span id="realtime-timestamp"></span>
-                                <p>Currently expanding my technical toolkit through the Google UX Design Certificate. Exploring Astro for development and Rive for design.</p>
-                            </section>
+                <ul class="project-list" id="project-list" role="list">
+
+                    <!-- Trip Planner -->
+                    <li class="project-row"
+                        data-id="tripplanner"
+                        data-status="complete"
+                        data-tags="web-design"
+                        data-video="https://res.cloudinary.com/drms0y8jz/video/upload/v1767085277/gothfinal1_dzanbg.mp4">
+
+                        <div class="project-row__trigger"
+                             tabindex="0"
+                             role="button"
+                             aria-expanded="false"
+                             aria-label="Open Trip Planner : Gothenburg, Sweden">
+                            <div class="project-row__thumb" aria-hidden="true">
+                                <video src="https://res.cloudinary.com/drms0y8jz/video/upload/v1767085277/gothfinal1_dzanbg.mp4" muted loop playsinline></video>
+                            </div>
+                            <span class="project-row__title">
+                                Trip Planner : Gothenburg, Sweden
+                                <svg class="project-row__chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+                            </span>
+                            <span class="project-row__type">
+                                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                                Site
+                            </span>
+                            <span class="project-row__date">May 26</span>
                         </div>
-                    </section>
-                    <nav class="home-nav" aria-label="Primary Nav">
-                        <ul>
-                            <li><a href="/works"><span aria-hidden="true">→</span>&nbsp;WORKS</a></li>
-                            <li><a href="/contact"><span aria-hidden="true">→</span>&nbsp;NOTES</a></li>
-                        </ul>
-                    </nav>
+
+                        <div class="project-row__panel" aria-hidden="true">
+                            <div class="prp-inner">
+                                <div class="prp-video">
+                                    <video muted loop playsinline></video>
+                                </div>
+                                <div class="prp-content">
+                                    <div class="prp-tags">
+                                        <span class="prp-tag">Site</span>
+                                        <span class="prp-tag">Developer &amp; Designer</span>
+                                    </div>
+                                    <h2 class="prp-title">Trip Planner : Gothenburg, Sweden</h2>
+                                    <p class="prp-desc">An exploratory project integrating JavaScript libraries and APIs for a functional trip planning site for Gothenburg, Sweden. Features a real-time weather app, an interactive map, and a supply list that uses local storage to help users prepare for their visit.</p>
+                                    <a class="prp-link" href="/projects/tripplanner/">
+                                        View Full Case Study
+                                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <!-- Moment / Portal -->
+                    <li class="project-row"
+                        data-id="momentportal"
+                        data-status="in-progress"
+                        data-tags="web-design,media-strategy"
+                        data-video="https://res.cloudinary.com/drms0y8jz/video/upload/v1767087250/portal1_r7olqg.mp4">
+
+                        <div class="project-row__trigger"
+                             tabindex="0"
+                             role="button"
+                             aria-expanded="false"
+                             aria-label="Open Moment / Portal">
+                            <div class="project-row__thumb" aria-hidden="true">
+                                <video src="https://res.cloudinary.com/drms0y8jz/video/upload/v1767087250/portal1_r7olqg.mp4" muted loop playsinline></video>
+                            </div>
+                            <span class="project-row__title">
+                                Moment / Portal
+                                <span class="project-row__status-badge">In Progress</span>
+                                <svg class="project-row__chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+                            </span>
+                            <span class="project-row__type">
+                                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                                Site
+                            </span>
+                            <span class="project-row__date">May 26</span>
+                        </div>
+
+                        <div class="project-row__panel" aria-hidden="true">
+                            <div class="prp-inner">
+                                <div class="prp-video">
+                                    <video muted loop playsinline></video>
+                                </div>
+                                <div class="prp-content">
+                                    <div class="prp-tags">
+                                        <span class="prp-tag">Site</span>
+                                        <span class="prp-tag">Developer &amp; Designer</span>
+                                        <span class="prp-tag prp-tag--inprogress">In Progress</span>
+                                    </div>
+                                    <h2 class="prp-title">Moment / Portal</h2>
+                                    <p class="prp-desc">This experimental website reimagines how digital environments can foster new relationships with time — beyond extraction and commodification. Inspired by Jenny Odell's <em>Saving Time</em>, the project features four interactive portals, each offering a different digital temporal experience.</p>
+                                    <a class="prp-link" href="/projects/momentportal/">
+                                        View Full Case Study
+                                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <!-- Mountain Communities -->
+                    <li class="project-row"
+                        data-id="mcotw"
+                        data-status="complete"
+                        data-tags="web-design,media-strategy"
+                        data-video="https://res.cloudinary.com/drms0y8jz/video/upload/v1767086013/mcotw_ypjupv.mp4">
+
+                        <div class="project-row__trigger"
+                             tabindex="0"
+                             role="button"
+                             aria-expanded="false"
+                             aria-label="Open Mountain Communities of the World">
+                            <div class="project-row__thumb" aria-hidden="true">
+                                <video src="https://res.cloudinary.com/drms0y8jz/video/upload/v1767086013/mcotw_ypjupv.mp4" muted loop playsinline></video>
+                            </div>
+                            <span class="project-row__title">
+                                Mountain Communities of the World
+                                <svg class="project-row__chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+                            </span>
+                            <span class="project-row__type">
+                                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                                Site
+                            </span>
+                            <span class="project-row__date">May 24</span>
+                        </div>
+
+                        <div class="project-row__panel" aria-hidden="true">
+                            <div class="prp-inner">
+                                <div class="prp-video">
+                                    <video muted loop playsinline></video>
+                                </div>
+                                <div class="prp-content">
+                                    <div class="prp-tags">
+                                        <span class="prp-tag">Site</span>
+                                        <span class="prp-tag">Developer &amp; Designer</span>
+                                    </div>
+                                    <h2 class="prp-title">Mountain Communities of the World</h2>
+                                    <p class="prp-desc">An educational website highlighting the diverse cultures, challenges, and resilience of mountain communities worldwide. Through interactive elements it serves as both a learning resource for educators and an advocacy tool to raise awareness about indigenous mountain populations.</p>
+                                    <a class="prp-link" href="/projects/mcotw/">
+                                        View Full Case Study
+                                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <!-- Digital Metabolism -->
+                    <li class="project-row"
+                        data-id="digitalmetabolism"
+                        data-status="complete"
+                        data-tags="web-design,media-strategy"
+                        data-video="https://res.cloudinary.com/drms0y8jz/video/upload/v1767085255/metabolisms_rwwqnz.mp4">
+
+                        <div class="project-row__trigger"
+                             tabindex="0"
+                             role="button"
+                             aria-expanded="false"
+                             aria-label="Open Digital Metabolism Test">
+                            <div class="project-row__thumb" aria-hidden="true">
+                                <video src="https://res.cloudinary.com/drms0y8jz/video/upload/v1767085255/metabolisms_rwwqnz.mp4" muted loop playsinline></video>
+                            </div>
+                            <span class="project-row__title">
+                                Digital Metabolism Test
+                                <svg class="project-row__chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+                            </span>
+                            <span class="project-row__type">
+                                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                                Site
+                            </span>
+                            <span class="project-row__date">May 24</span>
+                        </div>
+
+                        <div class="project-row__panel" aria-hidden="true">
+                            <div class="prp-inner">
+                                <div class="prp-video">
+                                    <video muted loop playsinline></video>
+                                </div>
+                                <div class="prp-content">
+                                    <div class="prp-tags">
+                                        <span class="prp-tag">Site</span>
+                                        <span class="prp-tag">Developer &amp; Designer</span>
+                                    </div>
+                                    <h2 class="prp-title">Digital Metabolism Test</h2>
+                                    <p class="prp-desc">A web-based interactive quiz that interprets key ideas from Amanda Starling Gould's research in digital environmental media studies into an engaging experience. Encourages users to consider the environmental and psychological effects of their digital habits.</p>
+                                    <a class="prp-link" href="/projects/digitalmetabolism/">
+                                        View Full Case Study
+                                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                </ul>
+
+                <div class="content__footer">
+                    <span id="results-count"></span>
                 </div>
             </div>
-        </section>
-    </main>
+
+        </div>
+    </div>
+
+    <!-- ── Ask / Contact Modal ──────────────────── -->
+    <div class="modal" id="ask-modal" aria-hidden="true" role="dialog" aria-labelledby="modal-title" aria-modal="true">
+        <div class="modal__inner">
+            <button class="modal__close" id="modal-close" aria-label="Close">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </button>
+            <p class="modal__eyebrow">Get in touch</p>
+            <h2 class="modal__title" id="modal-title">Say hello.</h2>
+            <p class="modal__subtitle">Open to freelance, collaboration, and conversation.</p>
+            <div class="modal__links">
+                <a href="mailto:hi@arielmolina.work" class="modal__link">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    hi@arielmolina.work
+                </a>
+                <a href="https://linkedin.com/in/ariel-molina-330292248" target="_blank" rel="noopener" class="modal__link">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                    LinkedIn
+                </a>
+                <a href="https://instagram.com/warmcomet" target="_blank" rel="noopener" class="modal__link">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                    @warmcomet
+                </a>
+                <a href="https://github.com/armolina179" target="_blank" rel="noopener" class="modal__link">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                    GitHub
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="modal-overlay" id="modal-overlay" aria-hidden="true"></div>
+
 </body>
 </html>

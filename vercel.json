@@ -1,6 +1,7 @@
 {
   "redirects": [
-    { "source": "/works.html", "destination": "/works", "permanent": true },
+    { "source": "/works", "destination": "/", "permanent": false },
+    { "source": "/works.html", "destination": "/", "permanent": true },
     { "source": "/about.html", "destination": "/about", "permanent": true },
     { "source": "/contact.html", "destination": "/contact", "permanent": true },
     { "source": "/assets/works/tripplanner/trip-planner.html", "destination": "/projects/tripplanner/", "permanent": true },
