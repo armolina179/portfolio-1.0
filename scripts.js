@@ -221,7 +221,7 @@
             const thumb   = row.querySelector('.project-row__thumb video');
             if (!trigger || !thumb) return;
             trigger.addEventListener('mouseenter', () => thumb.play().catch(() => {}));
-            trigger.addEventListener('mouseleave', () => { thumb.pause(); thumb.currentTime = 0; });
+            trigger.addEventListener('mouseleave', () => { thumb.pause(); thumb.currentTime = 0.3; });
         });
     }
 

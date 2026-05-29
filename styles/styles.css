@@ -447,12 +447,16 @@ p, a, li, span, h1, h2, h3 {
     color: var(--text);
 }
 
-.content__breadcrumb svg { color: var(--text-muted); }
+.content__breadcrumb svg { 
+    color: var(--text-muted); 
+    padding-top: 0.25rem;
+    padding-bottom: 0;
+}
 
 /* ── Project list column headers ───────────────── */
 .project-list-header {
     display: grid;
-    grid-template-columns: 1fr 100px 90px;
+    grid-template-columns: 1fr 100px 80px;
     gap: 1rem;
     padding: 0.4rem 1.25rem 0.4rem calc(1.25rem + 36px + 0.75rem);
     border-bottom: 1px solid var(--border);
@@ -561,7 +565,7 @@ p, a, li, span, h1, h2, h3 {
 .project-row__date {
     font-size: 0.8rem;
     color: var(--text-muted);
-    text-align: right;
+    text-align: center;
 }
 
 /* ── Inline accordion panel ────────────────────── */
@@ -747,7 +751,6 @@ p, a, li, span, h1, h2, h3 {
     font-size: 0.7rem;
     font-weight: 600;
     letter-spacing: 0.08em;
-    text-transform: uppercase;
     color: var(--text-faint);
     margin-bottom: 0.25rem;
 }
