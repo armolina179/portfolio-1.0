@@ -578,7 +578,7 @@ p, a, li, span, h1, h2, h3 {
 .prp-inner {
     position: relative;
     display: grid;
-    grid-template-columns: 3fr 2fr;
+    grid-template-columns: 3fr 7fr;
     border-top: 1px solid var(--border);
 }
 
@@ -1397,14 +1397,25 @@ body:has(.contact-page) {
     .project-row__trigger {
         grid-template-columns: 36px 1fr;
         grid-template-rows: auto auto;
-        row-gap: 0.1rem;
+        row-gap: 0;
         column-gap: 0.65rem;
+        align-items: start;
+    }
+
+    .project-row__thumb {
+        grid-row: 1 / span 2;
+        align-self: start;
+    }
+
+    .project-row__title {
+        padding-top: 0.1rem;
     }
 
     .project-row__type {
         grid-column: 2;
         grid-row: 2;
-        padding-bottom: 0.25rem;
+        padding-top: 0.05rem;
+        padding-bottom: 0.3rem;
     }
 
     .project-row__date { display: none; }
