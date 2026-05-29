@@ -32,7 +32,7 @@
 
             <!-- Bio dropdown -->
             <div class="sidebar__dropdown" id="sidebar-dropdown" hidden>
-                <p class="sidebar__bio">Web designer and developer based in Seattle, WA.<br><br><a href="http://garden.dfos.com">Currently making a garden for us.</a></p>
+                <p class="sidebar__bio">Web designer and developer based in Seattle, WA. Media strategy & brand management.<br><br><a href="http://garden.dfos.com">I made a garden for us.</a></p>
             </div>
 
             <nav class="sidebar__nav" aria-label="Project filters">
@@ -151,7 +151,7 @@
                         <div class="project-row__panel" aria-hidden="true">
                             <div class="prp-inner">
                                 <button class="prp-close" aria-label="Collapse">
-                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="18 15 12 9 6 15"/></svg>
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="18 15 12 9 6 15"/></svg>
                                 </button>
                                 <div class="prp-video">
                                     <video muted loop playsinline></video>
@@ -201,7 +201,7 @@
                         <div class="project-row__panel" aria-hidden="true">
                             <div class="prp-inner">
                                 <button class="prp-close" aria-label="Collapse">
-                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="18 15 12 9 6 15"/></svg>
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="18 15 12 9 6 15"/></svg>
                                 </button>
                                 <div class="prp-video">
                                     <video muted loop playsinline></video>
@@ -251,7 +251,7 @@
                         <div class="project-row__panel" aria-hidden="true">
                             <div class="prp-inner">
                                 <button class="prp-close" aria-label="Collapse">
-                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="18 15 12 9 6 15"/></svg>
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="18 15 12 9 6 15"/></svg>
                                 </button>
                                 <div class="prp-video">
                                     <video muted loop playsinline></video>
@@ -302,7 +302,7 @@
                         <div class="project-row__panel" aria-hidden="true">
                             <div class="prp-inner">
                                 <button class="prp-close" aria-label="Collapse">
-                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="18 15 12 9 6 15"/></svg>
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="18 15 12 9 6 15"/></svg>
                                 </button>
                                 <div class="prp-video">
                                     <video muted loop playsinline></video>
@@ -313,7 +313,7 @@
                                         <span class="prp-tag">Developer &amp; Designer</span>
                                     </div>
                                     <h2 class="prp-title">Moment / Portal</h2>
-                                    <p class="prp-desc">This experimental website reimagines how digital environments can foster new relationships with time beyond extraction and commodification. Inspired by Jenny Odell's "<em>Saving Time,</em>" the project features four interactive "portals," each offering a different digital temporal experience. Designed for students, educators, and those interested in alternative digital futures, it contributes to a culture of generating and deepening time rather than consuming it.</p>
+                                    <p class="prp-desc">This experimental website reimagines how digital environments can foster new relationships with time beyond extraction and commodification. Inspired by Jenny Odell's <em>Saving Time,</em> the project features four interactive "portals," each offering a different digital temporal experience. Designed for students, educators, and those interested in alternative digital futures, it contributes to a culture of generating and deepening time rather than consuming it.</p>
                                     <a class="prp-link" href="#">
                                         View Current Progress
                                         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
@@ -325,8 +325,14 @@
 
                 </ul>
 
-                <div class="content__footer">
-                    <span id="results-count"></span>
+                <div class="content__footer"> 
+                    <span id="currentYear"></span> &middot; Ariel Molina
+                    <script>
+                    document.addEventListener('DOMContentLoaded', function() {
+                    var currentYear = new Date().getFullYear();
+                    document.getElementById('currentYear').textContent = currentYear;
+                    });
+                    </script>
                 </div>
             </div>
 
