@@ -84,7 +84,6 @@
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -webkit-text-size-adjust: 100%;
-    cursor: none;
 }
 
 html, body {
@@ -303,6 +302,12 @@ p, a, li, span, h1, h2, h3 {
 /* Spacer pushes video to bottom */
 .sidebar__spacer { flex: 1; }
 
+[data-theme="dark"] .sidebar__video-wrap { display: none; }
+
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .sidebar__video-wrap { display: none; }
+}
+
 /* Sidebar video */
 .sidebar__video-wrap {
     padding: 1rem;
@@ -483,9 +488,12 @@ p, a, li, span, h1, h2, h3 {
 }
 
 .project-row__trigger:hover,
-.project-row__trigger:focus-visible,
-.project-row.expanded > .project-row__trigger {
+.project-row__trigger:focus-visible {
     background: var(--surface);
+}
+
+.project-row.expanded > .project-row__trigger {
+    display: none;
 }
 
 .project-row__trigger:focus-visible {
@@ -564,17 +572,41 @@ p, a, li, span, h1, h2, h3 {
 }
 
 .project-row.expanded > .project-row__panel {
-    max-height: 500px;
+    max-height: 700px;
 }
 
 .prp-inner {
+    position: relative;
     display: grid;
     grid-template-columns: 3fr 2fr;
     border-top: 1px solid var(--border);
 }
 
+.prp-close {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    z-index: 2;
+    width: 26px;
+    height: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+    transition: background 0.15s, color 0.15s;
+    cursor: pointer;
+}
+
+.prp-close:hover {
+    background: var(--surface-hover);
+    color: var(--text);
+}
+
 .prp-video {
-    aspect-ratio: 16 / 9;
+    aspect-ratio: 1 / 1;
     overflow: hidden;
     background: var(--border);
     border-right: 1px solid var(--border);
@@ -617,16 +649,14 @@ p, a, li, span, h1, h2, h3 {
 }
 
 .prp-title {
-    font-family: "Frick0.3", ui-serif, Georgia, serif;
-    font-size: clamp(1rem, 1.1rem + 0.4vw, 1.4rem);
-    font-weight: 400;
+    font-size: clamp(1rem, 1.1rem + 0.4vw, 1.35rem);
+    font-weight: 600;
     line-height: 1.2;
     color: var(--text);
-    letter-spacing: -0.01em;
+    letter-spacing: -0.02em;
 }
 
 .prp-desc {
-    font-family: "FunnelDisplay", ui-sans-serif, system-ui, sans-serif;
     font-size: 0.825rem;
     line-height: 1.6;
     color: var(--text-muted);
@@ -636,8 +666,8 @@ p, a, li, span, h1, h2, h3 {
     display: inline-flex;
     align-items: center;
     gap: 0.4rem;
-    font-family: "Frick0.3", ui-serif, Georgia, serif;
-    font-size: 0.875rem;
+    font-size: 0.8125rem;
+    font-weight: 600;
     color: var(--accent);
     text-decoration: none;
     width: fit-content;
@@ -1390,7 +1420,7 @@ body:has(.contact-page) {
     }
 
     .project-row.expanded > .project-row__panel {
-        max-height: 900px;
+        max-height: 1100px;
     }
 
     /* Contact page */

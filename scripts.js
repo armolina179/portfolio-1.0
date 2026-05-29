@@ -88,6 +88,13 @@
         if (panel) panel.setAttribute('aria-hidden', 'true');
     }
 
+    const BREADCRUMB_ICONS = {
+        all: `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>`,
+        inprogress: `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg>`,
+        webdesign: `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>`,
+        mediastrategy: `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"/></svg>`
+    };
+
     function updateResults() {
         let visible = 0;
         rows.forEach(row => {
@@ -107,13 +114,17 @@
         const countEl = document.getElementById('results-count');
         if (countEl) countEl.textContent = visible + ' result' + (visible !== 1 ? 's' : '');
 
-        const titleEl = document.getElementById('content-title');
-        if (titleEl) {
-            if (activeTag === 'web-design')          titleEl.textContent = 'Web Design';
-            else if (activeTag === 'media-strategy') titleEl.textContent = 'Media Strategy';
-            else if (activeStatus === 'in-progress') titleEl.textContent = 'In Progress';
-            else                                     titleEl.textContent = 'All Projects';
-        }
+        const titleEl   = document.getElementById('content-title');
+        const iconEl    = document.getElementById('breadcrumb-icon');
+        let title = 'All Projects';
+        let iconKey = 'all';
+
+        if (activeTag === 'web-design')          { title = 'Web Design';     iconKey = 'webdesign'; }
+        else if (activeTag === 'media-strategy') { title = 'Media Strategy'; iconKey = 'mediastrategy'; }
+        else if (activeStatus === 'in-progress') { title = 'In Progress';    iconKey = 'inprogress'; }
+
+        if (titleEl) titleEl.textContent = title;
+        if (iconEl)  iconEl.innerHTML    = BREADCRUMB_ICONS[iconKey];
     }
 
     updateResults();
@@ -195,6 +206,12 @@
         trigger.addEventListener('keydown', (e) => {
             if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); }
         });
+    });
+
+    /* ── Collapse buttons inside panels ──────── */
+    document.querySelectorAll('.prp-close').forEach(btn => {
+        const row = btn.closest('.project-row');
+        if (row) btn.addEventListener('click', (e) => { e.stopPropagation(); collapseRow(row); });
     });
 
     /* ── Thumbnail hover: play video ─────────── */
