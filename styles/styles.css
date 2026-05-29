@@ -437,8 +437,9 @@ p, a, li, span, h1, h2, h3 {
     justify-content: center;
 }
 
-.content__breadcrumb svg { 
+.content__breadcrumb svg {
     color: var(--text-muted);
+    display: block;
 }
 
 /* ── Project list column headers ───────────────── */
@@ -600,6 +601,9 @@ p, a, li, span, h1, h2, h3 {
 .prp-video {
     aspect-ratio: 1 / 1;
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .prp-video video {
@@ -609,7 +613,6 @@ p, a, li, span, h1, h2, h3 {
     display: block;
     border-radius: calc(var(--radius) * 2);
     border: 2px solid var(--border);
-    margin: 1.5rem auto;
 }
 
 .prp-content {
@@ -840,11 +843,6 @@ p, a, li, span, h1, h2, h3 {
     .sidebar__spacer { display: none; }
 
     .main { overflow: visible; }
-    
-    .topbar {
-        height: 0;
-        visibility: hidden;
-    }
 
     .content {
         overflow: visible;
