@@ -671,7 +671,7 @@ p, a, li, span, h1, h2, h3 {
     align-items: center;
     gap: 0.4rem;
     font-size: 0.8125rem;
-    font-weight: 600;
+    font-weight: 700;
     color: var(--accent);
     text-decoration: none;
     width: fit-content;
@@ -1366,6 +1366,15 @@ body:has(.contact-page) {
     :root { --sidebar-width: 200px; }
 }
 
+@media (max-width: 975px) {
+    .prp-video {
+        background: none;
+        margin-top: 0.875rem;
+        margin-left: 0.875rem;
+        border: 1.5px solid var(--border-strong);
+}
+}
+
 @media (max-width: 720px) {
     .dashboard {
         flex-direction: column;
@@ -1425,8 +1434,9 @@ body:has(.contact-page) {
     }
 
     .prp-video {
-        border-right: none;
-        border-bottom: 1px solid var(--border);
+        border: none;
+        border-bottom: 1.5px solid var(--border);
+        margin: 0;
     }
 
     .project-row.expanded > .project-row__panel {
