@@ -256,6 +256,10 @@ p, a, li, span, h1, h2, h3 {
     font-weight: 600;
 }
 
+.dot {
+    fill: var(--accent);
+}
+
 .sidebar__badge {
     margin-left: auto;
     font-size: 0.7rem;
