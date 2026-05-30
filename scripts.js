@@ -252,9 +252,216 @@
     if (modalClose)   modalClose.addEventListener('click', closeModal);
     if (modalOverlay) modalOverlay.addEventListener('click', closeModal);
 
+    /* ── Brief Drawer ─────────────────────────── */
+    const briefDrawer  = document.getElementById('brief-drawer');
+    const briefOverlay = document.getElementById('brief-overlay');
+    const briefClose   = document.getElementById('brief-drawer-close');
+    const briefBody    = document.getElementById('brief-drawer-body');
+    let lastBriefTrigger = null;
+
+    function loadMarked() {
+        if (window.marked) return Promise.resolve();
+        return new Promise((resolve, reject) => {
+            const s = document.createElement('script');
+            s.src = 'https://cdn.jsdelivr.net/npm/marked/marked.min.js';
+            s.onload  = resolve;
+            s.onerror = reject;
+            document.head.appendChild(s);
+        });
+    }
+
+    function parseFrontmatter(text) {
+        const match = text.match(/^---\n([\s\S]*?)\n---\n([\s\S]*)$/);
+        if (!match) return { meta: {}, body: text };
+        const meta = {};
+        match[1].split('\n').forEach(line => {
+            const colon = line.indexOf(':');
+            if (colon === -1) return;
+            const key = line.slice(0, colon).trim();
+            const val = line.slice(colon + 1).trim().replace(/^['"]|['"]$/g, '');
+            if (key) meta[key] = val;
+        });
+        return { meta, body: match[2] };
+    }
+
+    function buildDrawerHTML(meta, renderedBody) {
+        const videoHTML = meta.video
+            ? `<div class="brief-drawer__video"><video src="${meta.video}" autoplay loop muted playsinline></video></div>`
+            : '';
+
+        const tagType = meta.type ? `<span class="prp-tag">${meta.type}</span>` : '';
+        const tagRole = meta.role ? `<span class="prp-tag">${meta.role}</span>` : '';
+
+        const metaRows = [
+            meta.dates       && `<p><strong>Dates:</strong> ${meta.dates}</p>`,
+            meta.supervisor  && `<p><strong>Supervisor:</strong> ${meta.supervisor}</p>`,
+            meta.stack       && `<p><strong>Tech Stack:</strong> ${meta.stack}</p>`,
+            meta.tools       && `<p><strong>Design Tools:</strong> ${meta.tools}</p>`,
+        ].filter(Boolean).join('');
+
+        const linkHTML = meta.link
+            ? `<a class="brief-drawer__meta-link" href="${meta.link}" target="_blank" rel="noopener">${meta.linkLabel || 'Visit the website'} <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>`
+            : '';
+
+        return `<div class="brief-drawer__content-wrap">
+                ${videoHTML}
+                <div class="brief-drawer__tags">${tagType}${tagRole}</div>
+                <h1 class="brief-drawer__title">${meta.title || ''}</h1>
+                <div class="brief-drawer__meta">${metaRows}${linkHTML}</div>
+                <div class="brief-drawer__prose">${renderedBody}</div>
+            </div>`;
+    }
+
+    function initBriefAccordions(container) {
+        const prose = container.querySelector('.brief-drawer__prose');
+        if (!prose) return;
+
+        // Collect all rendered elements and group them under their h2
+        const nodes = Array.from(prose.children);
+        const groups = [];
+        let current = null;
+
+        nodes.forEach(node => {
+            if (node.tagName === 'H2') {
+                current = { title: node.textContent.trim(), innerHTML: node.innerHTML, nodes: [] };
+                groups.push(current);
+            } else if (current) {
+                current.nodes.push(node);
+            }
+        });
+
+        // Rebuild prose as accordion sections
+        prose.innerHTML = '';
+
+        groups.forEach(({ title, innerHTML, nodes: bodyNodes }) => {
+            const isOverview = title === 'Overview';
+            const section = document.createElement('div');
+            section.className = 'brief-section';
+
+            if (isOverview) {
+                const heading = document.createElement('div');
+                heading.className = 'brief-section__heading';
+                heading.textContent = title;
+                section.appendChild(heading);
+            } else {
+                const toggle = document.createElement('button');
+                toggle.className = 'brief-section__toggle';
+                toggle.setAttribute('aria-expanded', 'false');
+                toggle.innerHTML = `<span>${innerHTML}</span><svg class="brief-section__chevron" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>`;
+                section.appendChild(toggle);
+            }
+
+            const body = document.createElement('div');
+            body.className = isOverview
+                ? 'brief-section__body brief-section__body--always-open'
+                : 'brief-section__body';
+            if (!isOverview) body.style.maxHeight = '0';
+            bodyNodes.forEach(n => body.appendChild(n));
+            section.appendChild(body);
+
+            prose.appendChild(section);
+        });
+
+        // Toggle behavior
+        prose.querySelectorAll('.brief-section__toggle').forEach(toggle => {
+            toggle.addEventListener('click', () => {
+                const body = toggle.nextElementSibling;
+                const expanded = toggle.getAttribute('aria-expanded') === 'true';
+                toggle.setAttribute('aria-expanded', String(!expanded));
+                toggle.classList.toggle('active', !expanded);
+                body.style.maxHeight = expanded ? '0' : body.scrollHeight + 'px';
+            });
+        });
+
+        // Inline images — float alternating left/right, click to expand
+        let imgIndex = 0;
+        prose.querySelectorAll('.brief-section__body img').forEach(img => {
+            const parent = img.parentElement;
+            if (!parent) return;
+
+            // Wrap the containing <p> if it only holds this image
+            const wrap = (parent.tagName === 'P' && parent.childElementCount === 1)
+                ? parent
+                : (() => {
+                    const w = document.createElement('div');
+                    img.replaceWith(w);
+                    w.appendChild(img);
+                    return w;
+                })();
+
+            const floatDir = imgIndex % 2 === 0 ? 'brief-img-wrap--float-right' : 'brief-img-wrap--float-left';
+            wrap.classList.add('brief-img-wrap', floatDir);
+            imgIndex++;
+
+            wrap.addEventListener('click', () => {
+                const isExpanded = wrap.classList.contains('brief-img-wrap--expanded');
+                wrap.classList.toggle('brief-img-wrap--expanded', !isExpanded);
+
+                // If inside an open accordion, recalculate its max-height
+                const sectionBody = wrap.closest('.brief-section__body');
+                if (sectionBody && sectionBody.style.maxHeight !== 'none') {
+                    sectionBody.style.maxHeight = sectionBody.scrollHeight + 'px';
+                }
+            });
+        });
+    }
+
+    async function openBrief(id, triggerEl) {
+        if (triggerEl) lastBriefTrigger = triggerEl;
+        briefBody.innerHTML = '<p class="brief-drawer__loading">Loading…</p>';
+        briefDrawer.classList.add('open');
+        briefDrawer.setAttribute('aria-hidden', 'false');
+        briefOverlay.classList.add('visible');
+        briefBody.scrollTop = 0;
+        history.pushState({ project: id }, '', `?project=${id}`);
+
+        try {
+            await loadMarked();
+            const res = await fetch(`/data/projects/${id}.md`);
+            if (!res.ok) throw new Error('Not found');
+            const text = await res.text();
+            const { meta, body } = parseFrontmatter(text);
+            briefBody.innerHTML = buildDrawerHTML(meta, window.marked.parse(body));
+            initBriefAccordions(briefBody);
+            briefClose && briefClose.focus();
+        } catch (_) {
+            briefBody.innerHTML = '<p class="brief-drawer__error">Brief could not be loaded.</p>';
+        }
+    }
+
+    function closeBrief() {
+        if (!briefDrawer || !briefDrawer.classList.contains('open')) return;
+        const v = briefBody && briefBody.querySelector('video');
+        if (v) { v.pause(); v.src = ''; }
+        briefDrawer.classList.remove('open');
+        briefDrawer.setAttribute('aria-hidden', 'true');
+        briefOverlay.classList.remove('visible');
+        history.pushState({}, '', location.pathname);
+        if (lastBriefTrigger) { lastBriefTrigger.focus(); lastBriefTrigger = null; }
+    }
+
+    if (briefClose)   briefClose.addEventListener('click', closeBrief);
+    if (briefOverlay) briefOverlay.addEventListener('click', closeBrief);
+
+    document.querySelectorAll('.prp-link[data-project]').forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            openBrief(link.dataset.project, link);
+        });
+    });
+
+    window.addEventListener('popstate', (e) => {
+        if (e.state && e.state.project) openBrief(e.state.project);
+        else closeBrief();
+    });
+
+    const initialProject = new URLSearchParams(location.search).get('project');
+    if (initialProject) openBrief(initialProject);
+
     /* ── Global keyboard handlers ─────────────── */
     document.addEventListener('keydown', (e) => {
         if (e.key !== 'Escape') return;
+        if (briefDrawer && briefDrawer.classList.contains('open')) { closeBrief(); return; }
         if (modal && modal.classList.contains('open')) { closeModal(); return; }
         rows.forEach(r => { if (r.classList.contains('expanded')) collapseRow(r); });
     });
