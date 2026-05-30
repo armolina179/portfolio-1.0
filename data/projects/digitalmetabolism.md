@@ -16,17 +16,17 @@ linkLabel: Visit the website
 
 ## Overview
 
-An interactive, question-based web experience revealing the hidden environmental and material costs of everyday technology. Grounded in Dr. Amanda Starling Gould's framework of the "digital-environmental metabolism," it invites digital natives to examine the infrastructure behind the interfaces they use daily — the wires, workers, warehouses, and waste that the word "cloud" obscures. Built with TypeScript, React, and Vite, the project bridges critical systems thinking, artistic expression, and educational design. 
+An interactive, question-based web experience revealing the hidden environmental and material costs of everyday technology. Grounded in Dr. Amanda Starling Gould's framework of the "digital-environmental metabolism," it invites digital natives to examine the infrastructure behind the interfaces they use daily; the wires, workers, warehouses, and waste that  phrases like "the cloud" obscures. Built with TypeScript, React, and Vite, the project bridges critical systems thinking, artistic expression, and educational design. 
 
 Key takeaway: Asking better questions can be more powerful than delivering better answers.
 
 ## The Work
 
-The project reframes technology not as immaterial — as terms like "the cloud" suggest — but as embedded in physical, environmental, and social systems.
+The project reframes technology not as immaterial, as terms like the cloud, ethernet, and cyberspace suggest, but as embedded in physical, environmental, and social systems. In the words of Dr. Starling Gould, "A metabolic framework corrects this [language] to remind us of the material (embodied), contextual (embedded), and territorial (grounded) nature of the digital universe."
 
 ### Research →
 
-Built around [Dr. Amanda Starling Gould's research](https://dukespace.lib.duke.edu/items/563bf5f5-be9e-4ad0-8cba-2ae98213ec8c) on digital infrastructure and its material realities. Key inspirations: Holly Herndon and Mat Dryhurst's *[Interdependence](https://interdependence.fm/)* podcast and Venkatesh Rao's *[The Permaweird](https://contraptions.venkateshrao.com/p/the-permaweird)*.
+Built around [Dr. Amanda Starling Gould's research](https://dukespace.lib.duke.edu/items/563bf5f5-be9e-4ad0-8cba-2ae98213ec8c) on digital infrastructure and its material realities. Other key inspirations: Holly Herndon and Mat Dryhurst's *[Interdependence](https://interdependence.fm/)* podcast and Venkatesh Rao's *[The Permaweird](https://contraptions.venkateshrao.com/p/the-permaweird)*.
 
 ### Planning →
 

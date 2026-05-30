@@ -16,13 +16,13 @@ linkLabel: Visit the website
 
 ## Overview
 
-A single-page trip planner for a four-day visit to Gothenburg, Sweden. Built to feel calm and functional during an actual trip, it pairs a tab-based itinerary, interactive Leaflet map, live Open-Meteo weather data, and persistent trip tools into one quiet interface. The project was a deliberate exercise in restraint — every feature had to earn its place by reducing friction rather than adding novelty. 
+A single-page trip planner for a four-day visit to Gothenburg, Sweden. Built to feel calm and functional during an actual trip, it pairs a tab-based itinerary, interactive Leaflet map, live Open-Meteo weather data, and persistent trip tools into one quiet interface. The project was a deliberate exercise in restraint. Every feature had to earn its place by reducing friction rather than adding novelty. 
 
 Key takeaway: Good utility design is mostly about what you leave out.
 
 ## The Work
 
-The guiding principle was designing for calm — reducing decision friction so travelers can move confidently without being overwhelmed.
+The guiding principle was designing for calm; reducing decision friction so travelers can move confidently without being overwhelmed.
 
 ### Research →
 

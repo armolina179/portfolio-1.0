@@ -9,7 +9,7 @@ role: Designer & Developer
 stack: 'HTML, CSS, JavaScript, Visual Studio Code, GitHub, Vercel'
 tools: 'Adobe Creative Suite, Figma'
 video: 'https://res.cloudinary.com/drms0y8jz/video/upload/v1767086013/mcotw_ypjupv.mp4'
-link: 'https://mountain-communities.vercel.app/#/'
+link: 'https://summitfolk.vercel.app/#/'
 linkLabel: Visit the website
 ---
 

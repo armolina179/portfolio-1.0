@@ -21,7 +21,7 @@ Key takeaway: Slowness is not a design failure. It can be the entire point.
 
 ## The Work
 
-Built in response to philosophical ideas about deceleration and relational experience, the project translates theory into motion-graphic interfaces. Each portal was conceived as a temporal micro-world.
+Built in response to philosophical ideas about deceleration and relational experience, the project translates theory into motion-graphic interfaces. Each portal is conceived as a temporal micro-world.
 
 ### Research →
 
