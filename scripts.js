@@ -285,8 +285,8 @@
     }
 
     function buildDrawerHTML(meta, renderedBody) {
-        const videoHTML = meta.video
-            ? `<div class="brief-drawer__video"><video src="${meta.video}" autoplay loop muted playsinline></video></div>`
+        const thumbHTML = meta.video
+            ? `<div class="brief-drawer__thumb"><video src="${meta.video}" autoplay loop muted playsinline></video></div>`
             : '';
 
         const tagType = meta.type ? `<span class="prp-tag">${meta.type}</span>` : '';
@@ -304,10 +304,14 @@
             : '';
 
         return `<div class="brief-drawer__content-wrap">
-                ${videoHTML}
-                <div class="brief-drawer__tags">${tagType}${tagRole}</div>
-                <h1 class="brief-drawer__title">${meta.title || ''}</h1>
-                <div class="brief-drawer__meta">${metaRows}${linkHTML}</div>
+                <div class="brief-drawer__hero">
+                    <div class="brief-drawer__hero-left">
+                        <div class="brief-drawer__tags">${tagType}${tagRole}</div>
+                        <h1 class="brief-drawer__title">${meta.title || ''}</h1>
+                        <div class="brief-drawer__meta">${metaRows}${linkHTML}</div>
+                    </div>
+                    ${thumbHTML}
+                </div>
                 <div class="brief-drawer__prose">${renderedBody}</div>
             </div>`;
     }

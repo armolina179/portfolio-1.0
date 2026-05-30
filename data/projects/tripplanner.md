@@ -24,13 +24,13 @@ Key takeaway: Good utility design is mostly about what you leave out.
 
 The guiding principle was designing for calm; reducing decision friction so travelers can move confidently without being overwhelmed.
 
+![Trip Planner wireframe](/retired/projects/tripplanner/assets/tripplanner-wireframe.png)
+
 ### Research →
 
 Mapped a realistic four-day arc through Gothenburg and identified the features travelers actually check most: routes, weather, packing, and favorites. Established the planner as an in-the-moment tool rather than a long-form guide.
 
 ### Planning →
-
-![Trip Planner wireframe](/retired/projects/tripplanner/assets/tripplanner-wireframe.png)
 
 Chose a tab-based layout with Archivo Black headings and Space Mono body text on an ink-on-off-white palette. Structured trip tools around localStorage for persistence without a backend.
 
@@ -38,15 +38,9 @@ Chose a tab-based layout with Archivo Black headings and Space Mono body text on
 
 jQuery UI tabs for the itinerary, Leaflet and OpenStreetMap for the map, Open-Meteo for live weather data, and Magnific Popup for the photo gallery. Defensive parsing and default resets kept localStorage reliable across sessions.
 
-![Hero video — TouchDesigner process](https://res.cloudinary.com/drms0y8jz/video/upload/v1767404590/goteborg_tdprocess_may2dw.gif)
-
 ### Testing →
 
-![Weather widget — °C/°F toggle](/retired/projects/tripplanner/assets/forecast-animation.gif)
-
 Simplified packing list interactions after early testers found the delete flow unclear. Refined map marker contrast on island pins and ran an accessibility pass with axe.
-
-![Checklist — add/remove interactions](/retired/projects/tripplanner/assets/checklist-animation.gif)
 
 ### Output →
 

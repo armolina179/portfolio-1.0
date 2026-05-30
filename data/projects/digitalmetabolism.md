@@ -28,9 +28,9 @@ The project reframes technology not as immaterial, as terms like the cloud, ethe
 
 Built around [Dr. Amanda Starling Gould's research](https://dukespace.lib.duke.edu/items/563bf5f5-be9e-4ad0-8cba-2ae98213ec8c) on digital infrastructure and its material realities. Other key inspirations: Holly Herndon and Mat Dryhurst's *[Interdependence](https://interdependence.fm/)* podcast and Venkatesh Rao's *[The Permaweird](https://contraptions.venkateshrao.com/p/the-permaweird)*.
 
-### Planning →
-
 ![Site map](/retired/projects/digitalmetabolism/work-assets/sitemap.png)
+
+### Planning →
 
 Designed around a command-line interface aesthetic with Bernoru Black headings and Space Mono body text. Modular React components allowed for scalable question additions and a clear content hierarchy.
 
@@ -41,8 +41,6 @@ Designed around a command-line interface aesthetic with Bernoru Black headings a
 Built with TypeScript, React, and Vite. A progress tracker and question-based progression guide users through the experience. Cavalry handled motion graphics on the results page; React Bits drove the index background animation.
 
 ### Testing →
-
-![Primary audience diagram](/retired/projects/digitalmetabolism/work-assets/audience.png)
 
 Refined question language for accessibility and clarity after testing with digital natives. Improved responsive design for mobile and tablet experiences.
 
