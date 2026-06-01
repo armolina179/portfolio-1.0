@@ -1,5 +1,5 @@
 ---
-title: Moment / Portal
+title: Time Portals
 type: Site
 status: in-progress
 date: 2026
@@ -16,7 +16,7 @@ linkLabel: Visit the website
 
 ## Overview
 
-Moment / Portal is a motion-graphic web experience exploring how digital environments can reframe our relationship with time. Through four interactive portals — Augment, Nurture, Release, and Particle — the project asks visitors to slow down and encounter the web as a space for presence rather than consumption. Inspired by Jenny Odell's *Saving Time* and Byung-Chul Han's *The Scent of Time*, it was built as a direct challenge to extraction-based attention design. 
+Time Portals is a motion-graphic web experience exploring how digital environments can reframe our relationship with time. Through four interactive portals — Augment, Nurture, Release, and Particle — the project asks visitors to slow down and encounter the web as a space for presence rather than consumption. Inspired by Jenny Odell's *Saving Time* and Byung-Chul Han's *The Scent of Time*, it was built as a direct challenge to extraction-based attention design. 
 
 Key takeaway: Slowness is not a design failure. It can be the entire point.
 
