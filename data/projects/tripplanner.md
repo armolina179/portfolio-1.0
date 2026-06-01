@@ -24,7 +24,7 @@ Key takeaway: Good utility design is mostly about what you leave out.
 
 The guiding principle was designing for calm; reducing decision friction so travelers can move confidently without being overwhelmed.
 
-![Trip Planner wireframe](/retired/projects/tripplanner/assets/tripplanner-wireframe.png)
+![Trip Planner wireframe](/assets/projects/tripplanner/wireframe.png)
 
 ### Research →
 

@@ -287,7 +287,9 @@
     function buildDrawerHTML(meta, renderedBody) {
         const thumbHTML = meta.video
             ? `<div class="brief-drawer__thumb"><video src="${meta.video}" autoplay loop muted playsinline></video></div>`
-            : '';
+            : meta.image
+                ? `<div class="brief-drawer__thumb"><img src="${meta.image}" alt=""></div>`
+                : '';
 
         const tagType = meta.type ? `<span class="prp-tag">${meta.type}</span>` : '';
         const tagRole = meta.role ? `<span class="prp-tag">${meta.role}</span>` : '';

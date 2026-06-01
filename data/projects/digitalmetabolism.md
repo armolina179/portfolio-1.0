@@ -28,13 +28,13 @@ The project reframes technology not as immaterial, as terms like the cloud, ethe
 
 Built around [Dr. Amanda Starling Gould's research](https://dukespace.lib.duke.edu/items/563bf5f5-be9e-4ad0-8cba-2ae98213ec8c) on digital infrastructure and its material realities. Other key inspirations: Holly Herndon and Mat Dryhurst's *[Interdependence](https://interdependence.fm/)* podcast and Venkatesh Rao's *[The Permaweird](https://contraptions.venkateshrao.com/p/the-permaweird)*.
 
-![Site map](/retired/projects/digitalmetabolism/work-assets/sitemap.png)
+![Site map](/assets/projects/digitalmetabolism/sitemap.png)
 
 ### Planning →
 
 Designed around a command-line interface aesthetic with Bernoru Black headings and Space Mono body text. Modular React components allowed for scalable question additions and a clear content hierarchy.
 
-![Wireframe](/retired/projects/digitalmetabolism/work-assets/wireframe.png)
+![Wireframe](/assets/projects/digitalmetabolism/wireframe.png)
 
 ### Prototyping →
 
