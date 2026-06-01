@@ -296,6 +296,7 @@
 
         const metaRows = [
             meta.dates       && `<p><strong>Dates:</strong> ${meta.dates}</p>`,
+            meta.updated       && `<p><strong>Updated:</strong> ${meta.updated}</p>`,
             meta.supervisor  && `<p><strong>Supervisor:</strong> ${meta.supervisor}</p>`,
             meta.stack       && `<p><strong>Tech Stack:</strong> ${meta.stack}</p>`,
             meta.tools       && `<p><strong>Design Tools:</strong> ${meta.tools}</p>`,

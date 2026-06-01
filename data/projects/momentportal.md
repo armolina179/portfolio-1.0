@@ -4,6 +4,7 @@ type: Site
 status: in-progress
 date: 2026
 dates: Jan. 2024 - Apr. 2024
+updated: Jun. 2026
 role: Designer & Developer
 supervisor: Stacey Kuznetzov
 stack: 'HTML, CSS, Javascript, Visual Studio Code, GitHub, Vercel'

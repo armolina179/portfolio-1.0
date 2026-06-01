@@ -3,8 +3,9 @@ title: The Digital Metabolism Test
 fullTitle: 'You Are Here: Digital Metabolism Test'
 type: Site
 status: complete
-date: 2025
+date: 2024
 dates: Sept. 2024 - Dec. 2024
+updated: Oct. 2025
 role: Designer & Developer
 supervisor: Stacey Kuznetzov
 stack: 'TypeScript, React, Vite, Visual Studio Code, GitHub, Vercel'
