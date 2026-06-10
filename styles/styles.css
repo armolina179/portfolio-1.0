@@ -33,12 +33,13 @@
     --text:         #E8E7E2;
     --text-muted:   #6B6A62;
     --text-faint:   #4A4A44;
-    --accent:       #5B72FF;
-    --accent-light: #1A1F3A;
+    --accent:       #C4A07A;
+    --accent-light: #3A2510;
+    --yellow:       #E8B87A;
     --badge-bg:     #252522;
     --badge-text:   #7A7970;
-    --inprogress-bg:#2A2200;
-    --inprogress-text:#C89030;
+    --inprogress-bg:#3A2008;
+    --inprogress-text:#D4944A;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -51,12 +52,13 @@
         --text:         #E8E7E2;
         --text-muted:   #6B6A62;
         --text-faint:   #4A4A44;
-        --accent:       #5B72FF;
-        --accent-light: #1A1F3A;
+        --accent:       #C4A07A;
+        --accent-light: #3A2510;
+        --yellow:       #E8B87A;
         --badge-bg:     #252522;
         --badge-text:   #7A7970;
-        --inprogress-bg:#2A2200;
-        --inprogress-text:#C89030;
+        --inprogress-bg:#3A2008;
+        --inprogress-text:#D4944A;
     }
 }
 
